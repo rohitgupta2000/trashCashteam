@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SettingPage extends StatelessWidget {
+class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SettingPage'),
+        title: Text('NotificationPage'),
       ),
       body: Container(decoration: BoxDecoration(color: Colors.teal)),
     );
