@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:hexcolor/hexcolor.dart';
+import 'package:trashcash_home/helper/constants.dart';
+import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/LeaderboardContainer.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/LocationTextField.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/QuotationContainer.dart';
@@ -12,6 +14,17 @@ class TrashCashHome extends StatefulWidget {
 }
 
 class _TrashCashHomeState extends State<TrashCashHome> {
+
+//  @override
+//   void initState() {
+  
+//     setState(() {
+      
+//     });
+//      super.initState();
+//   }
+  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,18 +47,18 @@ class _TrashCashHomeState extends State<TrashCashHome> {
                 color: HexColor('#00806d'),
               ),
               child: Column(
-                children: [
-                  //comment: UserProfile
+                children: <StatefulWidget> [
+                 
                   UserProfile(),
-                  //comment: locationTextField
-                  LocationTextField(),
-                  //comment: quotation container
-                  QuotationContainer()
+                 
+                 // LocationTextField(),
+                 
+                 // QuotationContainer()
                 ],
               ),
             ),
-            //comment: leaderboard Container
-            LeaderBoardContainer(),
+            
+         //   LeaderBoardContainer(),
           ],
         ),
       ),

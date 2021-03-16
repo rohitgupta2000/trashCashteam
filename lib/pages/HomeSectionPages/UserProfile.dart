@@ -1,8 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:trashcash_home/helper/constants.dart';
+//import 'package:trashcash_home/helper/constants.dart';
+import 'package:trashcash_home/helper/helperfunction.dart';
+import 'package:trashcash_home/services/database.dart';
 
-class UserProfile extends StatelessWidget {
+
+class UserProfile extends StatefulWidget {
+  
+
+//final DatabaseMethods databaseMethods=new DatabaseMethods();
+
+  @override
+  _UserProfileState createState() => _UserProfileState();
+}
+
+class _UserProfileState extends State<UserProfile> {
+  //String name;
+  @override
+ 
+//   void initState() {
+//      getUserName();
+//     setState(() {
+     
+//     });
+//      super.initState();
+//   }
+    
+// getUserName() async{
+//   constants.myNAme=await HelperFunctions.getUserEmailSharedPreference();
+
+// }
+  
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,8 +58,8 @@ class UserProfile extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 5, 0, 8),
-                  child: Text(
-                    'Natasha Meher',
+                  child: Text( constants.myNAme !=null? constants.myNAme:"null",
+                    //'Natasha Meher',
                     style: GoogleFonts.redressed(
                       fontSize: 25,
                       // backgroundColor: Colors.red,

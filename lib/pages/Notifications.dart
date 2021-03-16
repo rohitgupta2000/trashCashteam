@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trashcash_home/notification/mainpage.dart';
 
 class NotificationPage extends StatelessWidget {
   @override
@@ -7,7 +8,8 @@ class NotificationPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('NotificationPage'),
       ),
-      body: Container(decoration: BoxDecoration(color: Colors.teal)),
+      body: Container(decoration: BoxDecoration(color: Colors.teal),
+      child: Notifications(),),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
+//import 'package:trashcash_home/notification/mainpage.dart';
 import 'package:trashcash_home/pages/Notifications.dart';
 import 'package:trashcash_home/pages/coupon.dart';
 //import 'package:trashcash_home/pages/profile.dart';
@@ -13,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'helper/helperfunction.dart';
+
 
 void main() async{
     WidgetsFlutterBinding.ensureInitialized(); 
@@ -21,14 +24,44 @@ void main() async{
   runApp(TrashCash());
 }
 
-class TrashCash extends StatelessWidget {
+
+
+class TrashCash extends StatefulWidget {
+
+
+  @override
+  _TrashCashState createState() => _TrashCashState();
+}
+
+
+class _TrashCashState extends State<TrashCash> {
+  
+  bool isUserloggedIn=false;
+
+  @override
+  void initState() {                          //the first part to run when this page loads
+    getLoggedInState();                       //takes time to get data from server..should not use await in init state so function is created
+    super.initState();
+  }
+    getLoggedInState() async {
+
+    await HelperFunctions.getUserLoggedInSharedPreference().then((value) { //this will return boolean value that isloggedin or not
+
+      setState(() {                         //rebuilds the widget
+        isUserloggedIn = value;
+      });
+    });
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "TrashCash",
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: MainPage(),
+      home: isUserloggedIn!=null?isUserloggedIn? HomePage(): MainPage():MainPage(),
       //HomePage(),
     );
   }

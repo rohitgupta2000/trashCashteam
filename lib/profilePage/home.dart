@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trashcash_home/helper/helperfunction.dart';
+import 'package:trashcash_home/services/auth.dart';
 import 'package:trashcash_home/views/mainpage.dart';
 import 'profile_menu.dart';
 import 'profilepic.dart';
@@ -6,6 +8,19 @@ import 'profilepic.dart';
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+
+
+    AuthMethods authMethods=new AuthMethods();
+
+signMeOut() async{
+   authMethods.signOut();
+           await    HelperFunctions.saveuserLoggedInSharedPreference(false);
+            //  await   HelperFunctions.saveUserEmailSharedPreference("");
+            //  await HelperFunctions.saveUserNameSharedPreference("");
+
+               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+}
     return Scaffold(
       backgroundColor: Colors.lightGreen[200],
       body: Column(
@@ -35,8 +50,8 @@ class Home extends StatelessWidget {
           ProfileMenu(
             icon: "assets/logout.svg",
             text: "Log Out",
-            press: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+            press: () { signMeOut();
+              
             },
           ),
         ],

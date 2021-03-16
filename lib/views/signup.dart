@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:trashcash_home/helper/constants.dart';
+import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/main.dart';
 import 'package:trashcash_home/services/auth.dart';
+import 'package:trashcash_home/services/database.dart';
 
 import 'login.dart';
 
@@ -13,6 +16,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
 
 bool isLoading =false;
+DatabaseMethods databaseMethods=new DatabaseMethods();
 AuthMethods authMethods=new AuthMethods(); //to use the methods of the class
 
 final formKey= GlobalKey<FormState>();
@@ -27,6 +31,16 @@ TextEditingController confirmPasswordtextEditingController=new TextEditingContro
 
 signMeUp(){
   if(formKey.currentState.validate()){
+
+ Map<String,String> userInfoMap={
+           "name" : userNametextEditingController.text,
+           "email": emailtextEditingController.text
+         };
+    HelperFunctions.saveUserEmailSharedPreference(emailtextEditingController.text);
+    HelperFunctions.saveUserNameSharedPreference(userNametextEditingController.text);
+    constants.myNAme=userNametextEditingController.text;
+
+
     setState(() {
       isLoading=true;
       
@@ -34,11 +48,10 @@ signMeUp(){
     authMethods.signUpWithEmailAndPassword(
       emailtextEditingController.text, passwordtextEditingController.text).then((value)
        {});
-       
+        databaseMethods.uploadUserInfo(userInfoMap); //uploading a map to database
+        HelperFunctions.saveuserLoggedInSharedPreference(true);
         Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage())
-      );
-    
+        MaterialPageRoute(builder: (context) => HomePage()));
   }
 }
 
