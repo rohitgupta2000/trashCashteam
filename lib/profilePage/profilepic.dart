@@ -33,7 +33,10 @@ class ProfilePic extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   color: Color(0xFFF5F6F9),
-                  onPressed: () {},
+                  onPressed: () {
+                   Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>  UploadingImageToFirebaseStorage ()));
+                  },
                   child: SvgPicture.asset("assets/camera2.svg"),
                 ),
               ),
