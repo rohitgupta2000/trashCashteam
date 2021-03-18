@@ -29,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       HelperFunctions.saveUserEmailSharedPreference(
           emailTextEditngController.text);
           
-    }
+    
 
       databaseMethods
           .getUserByUserEmail(emailTextEditngController.text)
@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
         snapshotUserInfo = val;
         HelperFunctions.saveUserNameSharedPreference(
             snapshotUserInfo.docs[0].data()["name"]);
-            constants.myNAme= snapshotUserInfo.docs[0].data()["name"];
+           // constants.myNAme= snapshotUserInfo.docs[0].data()["name"];
       });
 
       setState(() {
@@ -53,7 +53,9 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomePage()));
         }
+          
       });
+    }
     
   }
 

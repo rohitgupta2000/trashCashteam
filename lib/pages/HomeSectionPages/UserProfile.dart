@@ -17,21 +17,23 @@ class UserProfile extends StatefulWidget {
 }
 
 class _UserProfileState extends State<UserProfile> {
-  //String name;
-  @override
+  String name;
+ @override
  
-//   void initState() {
-//      getUserName();
-//     setState(() {
-     
-//     });
-//      super.initState();
-//   }
+  void initState() {
+     getUserName();
+     super.initState();
+  }
     
-// getUserName() async{
-//   constants.myNAme=await HelperFunctions.getUserEmailSharedPreference();
+getUserName() async{
+  await HelperFunctions.getUserNameSharedPreference().then((value){
+    setState(() {
+       constants.myNAme=value;
+    });
+   
+  });
 
-// }
+}
   
   
   @override
@@ -58,7 +60,7 @@ class _UserProfileState extends State<UserProfile> {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 5, 0, 8),
-                  child: Text( constants.myNAme !=null? constants.myNAme:"null",
+                  child: Text(  constants.myNAme !=null?  constants.myNAme:"const.myname is null",
                     //'Natasha Meher',
                     style: GoogleFonts.redressed(
                       fontSize: 25,

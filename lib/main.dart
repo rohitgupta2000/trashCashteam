@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
+import 'package:trashcash_home/helper/constants.dart';
 //import 'package:trashcash_home/notification/mainpage.dart';
 import 'package:trashcash_home/pages/Notifications.dart';
 import 'package:trashcash_home/pages/coupon.dart';
@@ -28,7 +29,6 @@ void main() async{
 
 class TrashCash extends StatefulWidget {
 
-
   @override
   _TrashCashState createState() => _TrashCashState();
 }
@@ -37,12 +37,21 @@ class TrashCash extends StatefulWidget {
 class _TrashCashState extends State<TrashCash> {
   
   bool isUserloggedIn=false;
+  String userName;
 
   @override
   void initState() {                          //the first part to run when this page loads
-    getLoggedInState();                       //takes time to get data from server..should not use await in init state so function is created
+    getLoggedInState();  
+    getuserName();                     //takes time to get data from server..should not use await in init state so function is created
     super.initState();
   }
+
+  getuserName() async{
+    await HelperFunctions.getUserNameSharedPreference().then((value) => userName=value);
+    constants.myNAme=userName;
+
+  }
+
     getLoggedInState() async {
 
     await HelperFunctions.getUserLoggedInSharedPreference().then((value) { //this will return boolean value that isloggedin or not
@@ -52,8 +61,6 @@ class _TrashCashState extends State<TrashCash> {
       });
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {

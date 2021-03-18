@@ -26,11 +26,11 @@ class HelperFunctions{
 
  static Future<bool> getUserLoggedInSharedPreference() async{  //static so that the function can be used from anywhere without creating objects,bool is the datatype
     SharedPreferences prefs=await SharedPreferences.getInstance();
-    return  prefs.getBool(sharedPrefenceUserLoggedInKey);
+    return await  prefs.getBool(sharedPrefenceUserLoggedInKey);
   }
    static Future<String> getUserNameSharedPreference() async{
     SharedPreferences prefs=await SharedPreferences.getInstance();
-    return  prefs.getString(sharedPreferenceUserNameKey);
+    return  await prefs.getString(sharedPreferenceUserNameKey);
     
   }
 

@@ -38,7 +38,7 @@ signMeUp(){
          };
     HelperFunctions.saveUserEmailSharedPreference(emailtextEditingController.text);
     HelperFunctions.saveUserNameSharedPreference(userNametextEditingController.text);
-    constants.myNAme=userNametextEditingController.text;
+    //constants.myNAme=userNametextEditingController.text;
 
 
     setState(() {

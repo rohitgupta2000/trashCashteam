@@ -47,18 +47,18 @@ class _TrashCashHomeState extends State<TrashCashHome> {
                 color: HexColor('#00806d'),
               ),
               child: Column(
-                children: <StatefulWidget> [
+                children:  [
                  
                   UserProfile(),
                  
-                 // LocationTextField(),
+                  LocationTextField(),
                  
-                 // QuotationContainer()
+                  QuotationContainer()
                 ],
               ),
             ),
             
-         //   LeaderBoardContainer(),
+           LeaderBoardContainer(),
           ],
         ),
       ),

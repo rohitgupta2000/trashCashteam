@@ -33,8 +33,12 @@ class NotificationTile extends StatelessWidget {
           ),
           SizedBox(width:8,),
           Container( padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            child: Text(userName,style: TextStyle(
+            child: Text(userName + ", your profile picture updated",style: TextStyle(
   color: Colors.white, fontSize: 17),)),
+
+                 
+           //    Expanded(child: Text("your profile picture has been updated now what to do ")), 
+                          
            
         ],
         
