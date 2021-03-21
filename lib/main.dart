@@ -9,6 +9,7 @@ import 'package:trashcash_home/pages/coupon.dart';
 //import 'package:trashcash_home/pages/profile.dart';
 import 'package:trashcash_home/pages/sell.dart';
 import 'package:trashcash_home/profilePage/profile_screen.dart';
+import 'package:trashcash_home/splashscreen/splash_screen.dart';
 import 'package:trashcash_home/views/mainpage.dart';
 import './pages/homePage.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _TrashCashState extends State<TrashCash> {
       debugShowCheckedModeBanner: false,
       title: "TrashCash",
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: isUserloggedIn!=null?isUserloggedIn? HomePage(): MainPage():MainPage(),
+      home: isUserloggedIn!=null?isUserloggedIn? HomePage(): SplashScreen():SplashScreen(),
       //HomePage(),
     );
   }

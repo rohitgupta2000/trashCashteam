@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_coupon/colors.dart';
-import 'package:flutter_application_coupon/size_config.dart';
+import 'package:trashcash_home/views/mainpage.dart';
+import './colors.dart';
+import './size_config.dart';
 
 import 'splash_content.dart';
 
@@ -71,7 +72,11 @@ class _BodyState extends State<Body> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
+
+
+                        },
                         child: Text(
                           "Continue",
                           style: TextStyle(
