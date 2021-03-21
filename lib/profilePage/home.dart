@@ -5,7 +5,12 @@ import 'package:trashcash_home/views/mainpage.dart';
 import 'profile_menu.dart';
 import 'profilepic.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
 

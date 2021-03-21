@@ -3,8 +3,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
-
- 
+import 'package:trashcash_home/profilePage/profile_screen.dart';
 
 final Color yellow = Colors.green[400];
 final Color orange = Colors.lightGreen[400];
@@ -18,7 +17,6 @@ class UploadingImageToFirebaseStorage extends StatefulWidget {
 class _UploadingImageToFirebaseStorageState
     extends State<UploadingImageToFirebaseStorage> {
   File _imageFile;
-
   final picker = ImagePicker();
 
   Future pickImage() async {
@@ -26,24 +24,18 @@ class _UploadingImageToFirebaseStorageState
 
     setState(() {
       _imageFile = File(pickedFile.path);
-    });
+    });    
   }
 
   Future uploadImageToFirebase(BuildContext context) async {
     String fileName = basename(_imageFile.path);
-    // StorageReference firebaseStorageRef =
-    //     FirebaseStorage.instance.ref().child('fileName');
-    // StorageUploadTask uploadTask = firebaseStorageRef.putFile(_imageFile);
-    // StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-    // taskSnapshot.ref.getDownloadURL().then(
-    //       (value) => print("Done: $value"),
-    //     );
     FirebaseStorage storage = FirebaseStorage.instance;
-Reference ref = storage.ref().child( 'profilepic/fileName');
-UploadTask uploadTask = ref.putFile(_imageFile);
-uploadTask.then((res) {
-   res.ref.getDownloadURL();
-});
+    Reference ref = storage.ref().child('profilepic/fileName');
+    UploadTask uploadTask = ref.putFile(_imageFile);
+    await uploadTask.then((res) {
+      res.ref.getDownloadURL();
+    });
+  //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
   }
 
   @override

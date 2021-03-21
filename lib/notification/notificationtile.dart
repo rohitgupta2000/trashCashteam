@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 class NotificationTile extends StatelessWidget {
   final String userName;
+  final String text;
   //final String chatRoomId;
-  NotificationTile(this.userName);
+  NotificationTile(this.userName,this.text);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -32,9 +33,11 @@ class NotificationTile extends StatelessWidget {
   color: Colors.white, fontSize: 17),),
           ),
           SizedBox(width:8,),
-          Container( padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-            child: Text(userName + ", your profile picture updated",style: TextStyle(
+          Expanded(
+                      child: Container( padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Text(userName + text,style: TextStyle(
   color: Colors.white, fontSize: 17),)),
+          ),
 
                  
            //    Expanded(child: Text("your profile picture has been updated now what to do ")), 

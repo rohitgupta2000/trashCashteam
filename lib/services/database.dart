@@ -40,8 +40,8 @@ class DatabaseMethods{
             .snapshots();
   
   }
-  getChatRooms(String userName)async{
-   return await FirebaseFirestore.instance.collection("chatRoom")
-    .where("users",arrayContains: userName).snapshots(); //instead of snapshots we may also write getdocuments
+  getUsers()async{
+   return await FirebaseFirestore.instance.collection("users")
+    .snapshots(); //instead of snapshots we may also write getdocuments
   }
 }
