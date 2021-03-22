@@ -7,6 +7,6 @@ class Coupon extends StatelessWidget {
         appBar: AppBar(
           title: Text('CouponPage'),
         ),
-        body: Container(color: Colors.orangeAccent));
+        body: Container(color: Colors.grey));
   }
 }
