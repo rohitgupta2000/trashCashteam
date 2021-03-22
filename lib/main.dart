@@ -5,7 +5,7 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:trashcash_home/helper/constants.dart';
 //import 'package:trashcash_home/notification/mainpage.dart';
 import 'package:trashcash_home/pages/Notifications.dart';
-import 'package:trashcash_home/pages/coupon.dart';
+import 'package:trashcash_home/pages/Coupons/coupon.dart';
 //import 'package:trashcash_home/pages/profile.dart';
 import 'package:trashcash_home/pages/sell.dart';
 import 'package:trashcash_home/profilePage/profile_screen.dart';
@@ -18,46 +18,41 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'helper/helperfunction.dart';
 
-
-void main() async{
-    WidgetsFlutterBinding.ensureInitialized(); 
-  await Firebase
-      .initializeApp();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(TrashCash());
 }
 
-
-
 class TrashCash extends StatefulWidget {
-
   @override
   _TrashCashState createState() => _TrashCashState();
 }
 
-
 class _TrashCashState extends State<TrashCash> {
-  
-  bool isUserloggedIn=false;
+  bool isUserloggedIn = false;
   String userName;
 
   @override
-  void initState() {                          //the first part to run when this page loads
-    getLoggedInState();  
-    getuserName();                     //takes time to get data from server..should not use await in init state so function is created
+  void initState() {
+    //the first part to run when this page loads
+    getLoggedInState();
+    getuserName(); //takes time to get data from server..should not use await in init state so function is created
     super.initState();
   }
 
-  getuserName() async{
-    await HelperFunctions.getUserNameSharedPreference().then((value) => userName=value);
-    constants.myNAme=userName;
-
+  getuserName() async {
+    await HelperFunctions.getUserNameSharedPreference()
+        .then((value) => userName = value);
+    constants.myNAme = userName;
   }
 
-    getLoggedInState() async {
+  getLoggedInState() async {
+    await HelperFunctions.getUserLoggedInSharedPreference().then((value) {
+      //this will return boolean value that isloggedin or not
 
-    await HelperFunctions.getUserLoggedInSharedPreference().then((value) { //this will return boolean value that isloggedin or not
-
-      setState(() {                         //rebuilds the widget
+      setState(() {
+        //rebuilds the widget
         isUserloggedIn = value;
       });
     });
@@ -69,14 +64,17 @@ class _TrashCashState extends State<TrashCash> {
       debugShowCheckedModeBanner: false,
       title: "TrashCash",
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: isUserloggedIn!=null?isUserloggedIn? HomePage(): SplashScreen():SplashScreen(),
+      home: isUserloggedIn != null
+          ? isUserloggedIn
+              ? HomePage()
+              : SplashScreen()
+          : SplashScreen(),
       //HomePage(),
     );
   }
 }
 
 Color color = HexColor('#dddddd');
-String display = '';
 
 class HomePage extends StatefulWidget {
   @override
@@ -86,24 +84,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currenIndex = 0;
   final List<Widget> _children = [
-     TrashCashHome(),
-     Coupon(),
-     Sell(),
-     NotificationPage(),   
-     ProfileScreen()
+    TrashCashHome(),
+    Coupon(),
+    Sell(),
+    NotificationPage(),
+    ProfileScreen()
   ];
 
   void onTappedBar(int ind) {
     setState(() {
       _currenIndex = ind;
-         });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _children[_currenIndex],
-
       backgroundColor: color,
       bottomNavigationBar: CurvedNavigationBar(
         index: _currenIndex,
@@ -119,8 +116,7 @@ class _HomePageState extends State<HomePage> {
             LineAwesomeIcons.rupee,
             size: 30,
           ),
-          Icon(LineAwesomeIcons.plus_circle,
-           size: 40),
+          Icon(LineAwesomeIcons.plus_circle, size: 40),
           Icon(
             LineAwesomeIcons.bell,
             size: 30,
@@ -134,7 +130,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-// HexColor('#B4B6B6'), HexColor('#2F604E')
-
-//height: MediaQuery.of(context).size.height
