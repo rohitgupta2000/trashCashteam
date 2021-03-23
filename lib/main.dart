@@ -10,7 +10,7 @@ import 'package:trashcash_home/pages/coupon.dart';
 import 'package:trashcash_home/pages/sell.dart';
 import 'package:trashcash_home/profilePage/profile_screen.dart';
 import 'package:trashcash_home/splashscreen/splash_screen.dart';
-import 'package:trashcash_home/views/mainpage.dart';
+//import 'package:trashcash_home/views/mainpage.dart';
 import './pages/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -20,6 +20,7 @@ import 'helper/helperfunction.dart';
 
 
 void main() async{
+
     WidgetsFlutterBinding.ensureInitialized(); 
   await Firebase
       .initializeApp();
@@ -39,13 +40,19 @@ class _TrashCashState extends State<TrashCash> {
   
   bool isUserloggedIn=false;
   String userName;
+  bool dpstatus=false;
 
   @override
   void initState() {                          //the first part to run when this page loads
     getLoggedInState();  
-    getuserName();                     //takes time to get data from server..should not use await in init state so function is created
+    getuserName();   
+    //getDpstatus();                  //takes time to get data from server..should not use await in init state so function is created
     super.initState();
   }
+  // getDpstatus()async{
+  //   await HelperFunctions.getUserDpSharedPreference().then((value) => dpstatus=value);
+  //   constants.isDpUpdated=dpstatus;
+  // }
 
   getuserName() async{
     await HelperFunctions.getUserNameSharedPreference().then((value) => userName=value);

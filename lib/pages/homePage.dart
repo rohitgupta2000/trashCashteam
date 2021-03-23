@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:hexcolor/hexcolor.dart';
-import 'package:trashcash_home/helper/constants.dart';
-import 'package:trashcash_home/helper/helperfunction.dart';
+//import 'package:trashcash_home/helper/constants.dart';
+//import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/LeaderboardContainer.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/LocationTextField.dart';
 import 'package:trashcash_home/pages/HomeSectionPages/QuotationContainer.dart';

@@ -14,6 +14,7 @@ class DatabaseMethods{
     .get();
     
   }
+  
   uploadUserInfo(userMap){
     FirebaseFirestore.instance.collection("users")
     .add(userMap);       //adding map to user collection
@@ -33,13 +34,13 @@ class DatabaseMethods{
   //           .add(messageMap).catchError((e){print(e.tostring());});
   
   // }
-  getConversationMessages(String chatRoomId,) async{
-    return await FirebaseFirestore.instance.collection("chatRoom").
-            doc(chatRoomId).collection("chats")
-            .orderBy("time",descending: false)
-            .snapshots();
-  
-  }
+  // getConversationMessages(String chatRoomId,) async{
+  //   return await FirebaseFirestore.instance.collection("chatRoom").
+  //           doc(chatRoomId).collection("chats")
+  //           .orderBy("time",descending: false)
+  //           .snapshots();
+  // }
+
   getUsers()async{
    return await FirebaseFirestore.instance.collection("users")
     .snapshots(); //instead of snapshots we may also write getdocuments

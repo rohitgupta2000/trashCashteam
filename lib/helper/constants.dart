@@ -1,4 +1,4 @@
-import 'package:trashcash_home/helper/helperfunction.dart';
+//import 'package:trashcash_home/helper/helperfunction.dart';
 
 // getName()async{
 
@@ -7,6 +7,7 @@ import 'package:trashcash_home/helper/helperfunction.dart';
 
 class constants{
   static String myNAme="initial";
+  static bool isDpUpdated=true;
   
 
 }

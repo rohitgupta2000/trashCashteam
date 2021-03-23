@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/services/auth.dart';
 import 'package:trashcash_home/views/mainpage.dart';
@@ -23,6 +24,7 @@ signMeOut() async{
            await    HelperFunctions.saveuserLoggedInSharedPreference(false);
             //  await   HelperFunctions.saveUserEmailSharedPreference("");
             //  await HelperFunctions.saveUserNameSharedPreference("");
+       
 
                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
 }
