@@ -63,7 +63,7 @@ class _ProfilePicState extends State<ProfilePic> {
   Widget build(BuildContext context) {
     return 
     Container(
-                margin: EdgeInsets.only(top: 20),
+                margin: EdgeInsets.only(top: 15),
                 child: SizedBox(
                     height: 150,
                     width: 150,

@@ -60,11 +60,12 @@ getUserName() async{
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 5, 0, 8),
-                  child: Text(  constants.myNAme !=null?  constants.myNAme:"const.myname is null",
+                  padding: const EdgeInsets.fromLTRB(40, 3, 0, 8),
+                  child: Text(  constants.myNAme !=null? "${constants.myNAme.substring(0,1).toUpperCase()}"+
+            "${constants.myNAme.substring(1,constants.myNAme.length)}":"const.myname is null",
                     //'Natasha Meher',
                     style: GoogleFonts.redressed(
-                      fontSize: 25,
+                      fontSize: 23,letterSpacing: -0.2,
                       // backgroundColor: Colors.red,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
@@ -119,7 +120,7 @@ getUserName() async{
    Widget alternativeDp(){
   return Container(
     child:  FutureBuilder(
-                                future: getImage(context,"trashcash2r.png"),
+                                future: getImage(context,"avai/coins.png"),
                                 builder: (context,snapshot){
                                   if(snapshot.connectionState==ConnectionState.done){
                                     return Container(
@@ -136,6 +137,7 @@ getUserName() async{
   );
 }
 }
+
 Future <Widget> getImage(BuildContext context, String imageName)async{
 Image image;
 await FirebaseStorageService.loadImage(context, imageName).then((value) {
@@ -154,24 +156,3 @@ class FirebaseStorageService extends ChangeNotifier{
     return await FirebaseStorage.instance.ref().child(image).getDownloadURL();
   }
 }
-// Widget alternativeDp(){
-//   return Container(
-//     child:  FutureBuilder(
-//                                 future: getImage(context,"trashcan1r.png"),
-//                                 builder: (context,snapshot){
-//                                   if(snapshot.connectionState==ConnectionState.done){
-//                                     return Container(
-//                                       width: 50,height: 50,
-//                                       child: snapshot.data,);
-//                                   }
-//                                     if(snapshot.connectionState==ConnectionState.waiting){
-//                                     return Container(
-//                                       width: 20,height: 20,
-//                                       child: CircularProgressIndicator(),);
-//                                   }
-//                                   return Container();
-//                                 },) ,
-//   );
-// }
-
-

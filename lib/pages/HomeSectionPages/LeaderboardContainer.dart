@@ -134,7 +134,7 @@ class LeaderBoardContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Taras Aba',
+                        'Rohit Gupta',
                         style: GoogleFonts.lora(fontSize: 18),
                       ),
                       Text(

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class DatabaseMethods{
   
@@ -44,5 +45,13 @@ class DatabaseMethods{
   getUsers()async{
    return await FirebaseFirestore.instance.collection("users")
     .snapshots(); //instead of snapshots we may also write getdocuments
+  }
+
+
+  static saveImageUrl( imageurl){
+    FirebaseFirestore.instance.collection("imageURLs").doc().set(imageurl);
+  }
+  static getImageUrl(){
+   return  FirebaseFirestore.instance.collection("imageURLs").snapshots();
   }
 }
