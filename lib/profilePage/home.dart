@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/services/auth.dart';
@@ -33,7 +34,21 @@ signMeOut() async{
       body: Column(
         children: [
           ProfilePic(),
-          SizedBox(height: 20),
+          Container(
+           // padding: EdgeInsets.only(bottom:5),
+            child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
+            "${constants.myNAme.substring(1,constants.myNAme.length)}"
+             ,
+             style: GoogleFonts.redressed(
+                        fontSize: 25,
+                        // backgroundColor: Colors.red,
+                       // letterSpacing: -1.5,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                      ),
+            ),
+          ),
+          SizedBox(height: 2),
           ProfileMenu(
             icon: "assets/privacy.svg",
             text: "Privacy",

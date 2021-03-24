@@ -19,7 +19,7 @@ class QuotationContainer extends StatelessWidget {
           ),
           Container(
             child: Text('– Robert Swan, Author',
-                style: GoogleFonts.redressed(fontSize: 15)),
+                style: GoogleFonts.redressed(fontSize: 17)),
           )
         ],
       ),
