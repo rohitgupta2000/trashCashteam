@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>454638577058-d5v7tv5irqosp87iri894b7o8abaqv85.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.454638577058-d5v7tv5irqosp87iri894b7o8abaqv85</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAhunPquH5zoMy_fC7HEyHDn1HigBmbYdI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>454638577058</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.trashcashHome</string>
+	<key>PROJECT_ID</key>
+	<string>trashcash-fb7cb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trashcash-fb7cb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:454638577058:ios:85968670e1e7386051fefb</string>
+</dict>
+</plist>
