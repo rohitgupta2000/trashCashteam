@@ -18,12 +18,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 import 'helper/helperfunction.dart';
 
-
-void main() async{
-
-    WidgetsFlutterBinding.ensureInitialized(); 
-  await Firebase
-      .initializeApp();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(TrashCash());
 }
 
@@ -35,12 +32,13 @@ class TrashCash extends StatefulWidget {
 class _TrashCashState extends State<TrashCash> {
   bool isUserloggedIn = false;
   String userName;
-  bool dpstatus=false;
+  bool dpstatus = false;
 
   @override
-  void initState() {                          //the first part to run when this page loads
-    getLoggedInState();  
-    getuserName();   
+  void initState() {
+    //the first part to run when this page loads
+    getLoggedInState();
+    getuserName();
     //getDpstatus();                  //takes time to get data from server..should not use await in init state so function is created
     super.initState();
   }
