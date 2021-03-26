@@ -19,23 +19,34 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Stack(
-      children: [
-        Container(
+        appBar: AppBar(
+          title: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 15, 8, 10),
+            child: Text(
+              'Redeem',
+              style: GoogleFonts.lora(
+                fontSize: 29,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+        ),
+        extendBodyBehindAppBar: true,
+        body: Container(
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              //comment: this is background image
-              image: NetworkImage(
-                  'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80'),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(children: [
-            Container(
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80'),
+                  fit: BoxFit.cover)),
+          child: Column(
+            children: [
+              Container(
                 margin: EdgeInsets.only(
-                  top: displayHeight(context) * 0.145,
+                  top: displayHeight(context) * 0.13,
                 ),
                 child: Column(
                   children: [
@@ -61,27 +72,29 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                       child: Image.asset('assets/coupons/1_front.PNG',
                           width: displayWidth(context) * 0.90),
                     ),
-                    //comment: this is the counter part
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Row(
                         children: [
                           Container(
-                            margin: EdgeInsets.only(
-                                left: displayWidth(context) * 0.37),
-                            child: SizedBox(
-                              height: 30,
-                              child: new FloatingActionButton(
-                                onPressed: (() {}),
-                                child: new Icon(
-                                  LineAwesomeIcons.minus,
-                                  color: Colors.black,
-                                  size: 20,
+                              margin: EdgeInsets.only(
+                                  left: displayWidth(context) * 0.37),
+                              child: SizedBox(
+                                height: 30,
+                                child: new FloatingActionButton(
+                                  onPressed: (() {
+                                    setState(() {
+                                      if (_n != 1) _n--;
+                                    });
+                                  }),
+                                  child: new Icon(
+                                    LineAwesomeIcons.minus,
+                                    color: Colors.black,
+                                    size: 20,
+                                  ),
+                                  backgroundColor: Colors.white,
                                 ),
-                                backgroundColor: Colors.white,
-                              ),
-                            ),
-                          ),
+                              )),
                           Text(
                             '$_n',
                             style: new TextStyle(
@@ -90,7 +103,11 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                           SizedBox(
                             height: 30,
                             child: new FloatingActionButton(
-                              onPressed: (() {}),
+                              onPressed: (() {
+                                setState(() {
+                                  _n++;
+                                });
+                              }),
                               child: new Icon(
                                 LineAwesomeIcons.plus,
                                 color: Colors.black,
@@ -98,11 +115,10 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                               ),
                               backgroundColor: Colors.white,
                             ),
-                          ),
+                          )
                         ],
                       ),
                     ),
-                    //comment: this is button part
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 20, 10, 10),
                       child: ElevatedButton(
@@ -120,27 +136,12 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                               MaterialStateProperty.all(HexColor('#025955')),
                         ),
                       ),
-                    ),
+                    )
                   ],
-                ))
-          ]),
-        ),
-        //comment: this is for the app bar part
-        Positioned(
-            child: Padding(
-          padding: const EdgeInsets.fromLTRB(8, 15, 8, 10),
-          child: AppBar(
-            centerTitle: true,
-            title: Text(
-              ' Redeem ',
-              style:
-                  GoogleFonts.lora(fontSize: 29, fontWeight: FontWeight.w500),
-            ),
-            backgroundColor: Colors.transparent,
-            elevation: 0,
+                ),
+              ),
+            ],
           ),
-        ))
-      ],
-    ));
+        ));
   }
 }
