@@ -8,8 +8,10 @@ class NotificationPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('NotificationPage'),
       ),
-      body: Container(decoration: BoxDecoration(color: Colors.teal),
-      child: Notifications(),),
+      body: Container(
+        decoration: BoxDecoration(color: Colors.green),
+        child: Notifications(),
+      ),
     );
   }
 }

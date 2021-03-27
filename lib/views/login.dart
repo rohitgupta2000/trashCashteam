@@ -28,8 +28,6 @@ class _LoginPageState extends State<LoginPage> {
     if (formkey.currentState.validate()) {
       HelperFunctions.saveUserEmailSharedPreference(
           emailTextEditngController.text);
-          
-    
 
       databaseMethods
           .getUserByUserEmail(emailTextEditngController.text)
@@ -37,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
         snapshotUserInfo = val;
         HelperFunctions.saveUserNameSharedPreference(
             snapshotUserInfo.docs[0].data()["name"]);
-           // constants.myNAme= snapshotUserInfo.docs[0].data()["name"];
+        // constants.myNAme= snapshotUserInfo.docs[0].data()["name"];
       });
 
       setState(() {
@@ -53,21 +51,19 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (context) => HomePage()));
         }
-          
       });
     }
-    
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.lightGreen[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         brightness: Brightness.dark,
-        backgroundColor: Colors.lightGreen[900],
+        backgroundColor: Colors.green,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -187,7 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                             onPressed: () {
                               signIn();
                             },
-                            color: Colors.lightGreen[800],
+                            color: Colors.lightGreen[600],
                             elevation: 0,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(50),
@@ -241,12 +237,12 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Image(
-                              image: AssetImage('assets/fb.png'),
+                              image: AssetImage('assets/facebook.png'),
                             ),
                             SizedBox(
                               width: 26,
                             ),
-                            Image(image: AssetImage('assets/google.png'))
+                            Image(image: AssetImage('assets/google2.png'))
                           ],
                         ),
                       ),

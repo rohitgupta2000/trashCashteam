@@ -26,8 +26,7 @@ class _CouponState extends State<Coupon> {
                 padding: const EdgeInsets.fromLTRB(10, 8, 0, 5),
                 child: Text(
                   'Coupons',
-                  style: GoogleFonts.lora(
-                      fontSize: 26, fontWeight: FontWeight.w300),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
               ),
               Row(
@@ -50,7 +49,7 @@ class _CouponState extends State<Coupon> {
               )
             ],
           )),
-          backgroundColor: HexColor('#0f3057'),
+          backgroundColor: HexColor('#32a852'),
         ),
         body: Container(
           height: double.infinity,
@@ -71,7 +70,7 @@ class _CouponState extends State<Coupon> {
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  colors: [HexColor('#85D8CE'), HexColor('#085078')])),
+                  colors: [HexColor('#fff'), HexColor('#fff')])),
         ));
   }
 }

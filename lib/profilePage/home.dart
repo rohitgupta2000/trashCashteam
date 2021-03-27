@@ -15,37 +15,35 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    AuthMethods authMethods = new AuthMethods();
 
+    signMeOut() async {
+      authMethods.signOut();
+      await HelperFunctions.saveuserLoggedInSharedPreference(false);
+      //  await   HelperFunctions.saveUserEmailSharedPreference("");
+      //  await HelperFunctions.saveUserNameSharedPreference("");
 
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainPage()));
+    }
 
-    AuthMethods authMethods=new AuthMethods();
-
-signMeOut() async{
-   authMethods.signOut();
-           await    HelperFunctions.saveuserLoggedInSharedPreference(false);
-            //  await   HelperFunctions.saveUserEmailSharedPreference("");
-            //  await HelperFunctions.saveUserNameSharedPreference("");
-       
-
-               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
-}
     return Scaffold(
-      backgroundColor: Colors.lightGreen[200],
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           ProfilePic(),
           Container(
-           // padding: EdgeInsets.only(bottom:5),
-            child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
-            "${constants.myNAme.substring(1,constants.myNAme.length)}"
-             ,
-             style: GoogleFonts.redressed(
-                        fontSize: 25,
-                        // backgroundColor: Colors.red,
-                       // letterSpacing: -1.5,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
+            // padding: EdgeInsets.only(bottom:5),
+            child: Text(
+              "${constants.myNAme.substring(0, 1).toUpperCase()}" +
+                  "${constants.myNAme.substring(1, constants.myNAme.length)}",
+              style: TextStyle(
+                fontSize: 25,
+                // backgroundColor: Colors.red,
+                // letterSpacing: -1.5,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+              ),
             ),
           ),
           SizedBox(height: 2),
@@ -72,8 +70,8 @@ signMeOut() async{
           ProfileMenu(
             icon: "assets/logout.svg",
             text: "Log Out",
-            press: () { signMeOut();
-              
+            press: () {
+              signMeOut();
             },
           ),
         ],

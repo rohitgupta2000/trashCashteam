@@ -58,7 +58,7 @@ class MainPage extends StatelessWidget {
                 height: MediaQuery.of(context).size.height / 3,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("assets/welcome.png"))),
+                        image: AssetImage("assets/welcome2.jpg"))),
               ),
               Column(
                 children: <Widget>[
@@ -71,7 +71,7 @@ class MainPage extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     // defining the shape
-                    color: Colors.lightGreen[800],
+                    color: Colors.lightGreen[600],
 
                     shape: RoundedRectangleBorder(
                         side: BorderSide(color: Colors.black),
@@ -95,7 +95,7 @@ class MainPage extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => SignupPage()));
                     },
-                    color: Colors.lightGreen[800],
+                    color: Colors.lightGreen[600],
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
                       side: BorderSide(color: Colors.black),

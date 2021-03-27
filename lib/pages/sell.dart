@@ -7,6 +7,6 @@ class Sell extends StatelessWidget {
         appBar: AppBar(
           title: Text('SellPage'),
         ),
-        body: Container(decoration: BoxDecoration(color: Colors.brown)));
+        body: Container(decoration: BoxDecoration(color: Colors.white)));
   }
 }
