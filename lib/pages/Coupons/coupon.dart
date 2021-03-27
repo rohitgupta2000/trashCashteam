@@ -50,7 +50,7 @@ class _CouponState extends State<Coupon> {
               )
             ],
           )),
-          backgroundColor: HexColor('#0f3057'),
+          backgroundColor: HexColor('#007965'),
         ),
         body: Container(
           height: double.infinity,
@@ -67,11 +67,12 @@ class _CouponState extends State<Coupon> {
               ],
             ),
           ),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [HexColor('#85D8CE'), HexColor('#085078')])),
+          color: Colors.green[100],
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //         begin: Alignment.topCenter,
+          //         end: Alignment.bottomCenter,
+          //         colors: [HexColor('#85D8CE'), HexColor('#085078')])),
         ));
   }
 }

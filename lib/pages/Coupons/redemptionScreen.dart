@@ -20,12 +20,13 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Padding(
             padding: const EdgeInsets.fromLTRB(8, 15, 8, 10),
             child: Text(
               'Redeem',
               style: GoogleFonts.lora(
-                fontSize: 29,
+                fontSize: 33,
                 fontWeight: FontWeight.w500,
               ),
             ),

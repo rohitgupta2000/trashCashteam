@@ -100,6 +100,33 @@ class _HomePageState extends State<HomePage> {
   void onTappedBar(int ind) {
     setState(() {
       _currenIndex = ind;
+      switch (ind) {
+        case 0:
+          {
+            color = HexColor('#dddddd');
+          }
+          break;
+        case 1:
+          {
+            color = Colors.green[100];
+          }
+          break;
+        case 2:
+          {
+            color = Colors.white;
+          }
+          break;
+        case 3:
+          {
+            color = Colors.green[900];
+          }
+          break;
+        case 4:
+          {
+            color = Colors.lightGreen[200];
+          }
+          break;
+      }
     });
   }
 
@@ -123,7 +150,11 @@ class _HomePageState extends State<HomePage> {
             LineAwesomeIcons.rupee,
             size: 30,
           ),
-          Icon(LineAwesomeIcons.plus_circle, size: 40),
+          Icon(
+            LineAwesomeIcons.plus_circle,
+            size: 50,
+            color: Colors.green[900],
+          ),
           Icon(
             LineAwesomeIcons.bell,
             size: 30,
