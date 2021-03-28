@@ -53,39 +53,7 @@ signMeOut() async{
                         ),
               ),
             ),
-<<<<<<< HEAD
-            SizedBox(height: 2),
-            ProfileMenu(
-              icon: "assets/privacy.svg",
-              text: "Privacy",
-              press: () {},
-            ),
-            ProfileMenu(
-              icon: "assets/scroll.svg",
-              text: "History",
-              press: () {},
-            ),
-            ProfileMenu(
-              icon: "assets/customer-support.svg",
-              text: "Help & Support",
-              press: () {},
-            ),
-            ProfileMenu(
-              icon: "assets/settings.svg",
-              text: "Settings",
-              press: () {},
-            ),
-            ProfileMenu(
-              icon: "assets/logout.svg",
-              text: "Log Out",
-              press: () { signMeOut();
-                
-              },
-            ),
-          ],
-        ),
-=======
-          ),
+          
           SizedBox(height: 2),
           ProfileMenu(
             icon: "assets/privacy.svg",
@@ -122,8 +90,7 @@ signMeOut() async{
             },
           ),
         ],
->>>>>>> b65541eadf3bad7bcfb38b410762e6dcef4f8192
       ),
-    );
+    ));
   }
 }
