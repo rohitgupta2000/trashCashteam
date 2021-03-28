@@ -17,7 +17,7 @@ class _SignupPageState extends State<SignupPage> {
   DatabaseMethods databaseMethods = new DatabaseMethods();
   AuthMethods authMethods = new AuthMethods(); //to use the methods of the class
 
-  final formKey = GlobalKey<FormState>();
+  static final formKey = GlobalKey<FormState>();
 
   TextEditingController userNametextEditingController =
       new TextEditingController();

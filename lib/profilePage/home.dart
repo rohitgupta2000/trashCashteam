@@ -5,6 +5,7 @@ import 'package:trashcash_home/Mislanious_Pages/help.dart';
 import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
+import 'package:trashcash_home/pages/orders.dart';
 import 'package:trashcash_home/services/auth.dart';
 import 'package:trashcash_home/views/mainpage.dart';
 import 'profile_menu.dart';
@@ -31,23 +32,6 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
-<<<<<<< HEAD
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          ProfilePic(),
-          Container(
-            // padding: EdgeInsets.only(bottom:5),
-            child: Text(
-              "${constants.myNAme.substring(0, 1).toUpperCase()}" +
-                  "${constants.myNAme.substring(1, constants.myNAme.length)}",
-              style: TextStyle(
-                fontSize: 25,
-                // backgroundColor: Colors.red,
-                // letterSpacing: -1.5,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-=======
       backgroundColor: Colors.lightGreen[200],
       body: 
       SingleChildScrollView(
@@ -66,7 +50,6 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
->>>>>>> main
               ),
             ),
           
@@ -81,13 +64,17 @@ class _HomeState extends State<Home> {
           ProfileMenu(
             icon: "assets/scroll.svg",
             text: "History",
-            press: () {},
+            press: () {
+              Navigator.push(
+            context, MaterialPageRoute(builder: (context) => OrdersPage()));  
+
+            },
           ),
           ProfileMenu(
             icon: "assets/customer-support.svg",
             text: "Help & Support",
             press: () {
-              Navigator.push (context, MaterialPageRoute(builder: (context) => help()),);
+              Navigator.push(context, MaterialPageRoute(builder: (context) => help()),);
 
             },
           ),

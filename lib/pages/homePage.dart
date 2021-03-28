@@ -69,21 +69,6 @@ class _TrashCashHomeState extends State<TrashCashHome> {
 
                   ],
                 ),
-<<<<<<< HEAD
-                color: HexColor('#32a852'),
-              ),
-              child: Column(
-                children: [
-                  UserProfile(),
-                  LocationTextField(),
-                  QuotationContainer(),
-                ],
-              ),
-            ),
-            LeaderBoardContainer(),
-            postsThatWeWantToShow(),
-          ],
-=======
               ),
               
              LeaderBoardContainer(),
@@ -92,14 +77,12 @@ class _TrashCashHomeState extends State<TrashCashHome> {
             ],
             
           ),
->>>>>>> main
         ),
       ),
     );
   }
 }
 
-<<<<<<< HEAD
 Widget postsThatWeWantToShow() {
   return Container(
     child: StreamBuilder(
@@ -148,86 +131,6 @@ Widget postsThatWeWantToShow() {
                   });
         }),
   );
-=======
- Widget postsThatWeWantToShow(){
-return  Container(
-      child: StreamBuilder(
-    
-      stream: DatabaseMethods.getImageUrl(),
-    
-      
-    
-      builder: (context,snapshot){
-    
-        return !snapshot.hasData?
-    
-        Center(child:CircularProgressIndicator()):
-    
-        ListView.builder(
-    
-          shrinkWrap: true,
-          physics: ClampingScrollPhysics(),
-    
-          itemCount: snapshot.data.docs.length,
-    
-          itemBuilder: (context,index){
-    
-    
-    
-           //   print("shuruuuu "+ getImages(snapshot.data.docs[index].data()["url"]).toString()+"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
-    
-              print((snapshot.data.docs[index].data()["url"])+"dppppppppppp");
-    
-            return 
-    
-            FutureBuilder(
-    
-                                     future: getImage(snapshot.data.docs[index].data()["url"].toString()),
-    
-                                    builder: (context,snapshot){
-    
-                                      if(snapshot.connectionState==ConnectionState.done){
-    
-                                        return Container(
-    
-                                        margin: EdgeInsets.only(bottom:20),
-    
-                                         //width: 100,height: 100,
-    
-                                          child: snapshot.data,);
-    
-                                      }
-    
-                                        if(snapshot.connectionState==ConnectionState.waiting){
-    
-                                        return Container(
-    
-                                          width: 20,height: 20,
-    
-                                          child: CircularProgressIndicator(),);
-    
-                                      }
-    
-                                      return Container();
-    
-                                    },) ;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-          //  getImages(snapshot.data.docs[index].data()["url"].toString());
-    
-          });
-    
-      }),
-  
-);
->>>>>>> main
 // FutureBuilder(
 //                                 future: getImage("abc"),
 //                                 builder: (context,snapshot){

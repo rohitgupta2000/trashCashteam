@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final formkey = GlobalKey<FormState>(); //to identify the form uniquely
+  static final  formkey = GlobalKey<FormState>(); //to identify the form uniquely
   bool isLoading = false;
 
   AuthMethods authMethods = new AuthMethods();

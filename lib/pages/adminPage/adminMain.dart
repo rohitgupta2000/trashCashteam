@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyAdminHomePage extends StatefulWidget {
+  MyAdminHomePage({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyAdminHomePageState createState() => _MyAdminHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyAdminHomePageState extends State<MyAdminHomePage> {
   int currentIndex;
   final List<Widget> _children = [
   AdminPosts(),OrdersPage(),Container()

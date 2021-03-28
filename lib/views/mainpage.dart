@@ -1,17 +1,11 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-// import 'package:login_signup_screen/login.dart';
-// import 'package:login_signup_screen/signup.dart';
+import 'package:trashcash_home/pages/adminLogin.dart';
+import 'package:trashcash_home/pages/adminPage/adminMain.dart';
 import 'signup.dart';
 import 'login.dart';
 
-// void main() {
-//   runApp(MaterialApp(
-//     debugShowCheckedModeBanner: false,
-//     home: HomePage(),
-//   ));
-// }
+
 
 class MainPage extends StatelessWidget {
   @override
@@ -19,11 +13,6 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          // we will give media query height
-          // double.infinity make it big as my parent allows
-          // while MediaQuery make it big as per the screen
-          // backgroundColor: Colors.lightGreen[200],
-
           width: double.infinity,
           height: MediaQuery.of(context).size.height,
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
@@ -41,9 +30,7 @@ class MainPage extends StatelessWidget {
                       fontSize: 30,
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
-                  ),
+                  
                   Text(
                     "TRASH CASH ",
                     textAlign: TextAlign.center,
@@ -55,7 +42,8 @@ class MainPage extends StatelessWidget {
                 ],
               ),
               Container(
-                height: MediaQuery.of(context).size.height / 3,
+                
+                height: MediaQuery.of(context).size.height / 4,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("assets/welcome2.jpg"))),
@@ -106,6 +94,15 @@ class MainPage extends StatelessWidget {
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           fontSize: 18),
+                    ),
+                  ),
+
+                    GestureDetector(
+                      onTap: (){Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AdminLogin()));},
+                      child: Container(padding: EdgeInsets.only(top:20),
+                      //alignment: Alignment.bottomRight,
+                      child:Text("Continue as Admin",style: TextStyle(fontSize: 20),),
                     ),
                   )
                 ],

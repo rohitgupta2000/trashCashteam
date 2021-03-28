@@ -31,7 +31,7 @@ class _OrdersPageState extends State<OrdersPage> {
                         return Column(
                           children: [Container(
                             margin: EdgeInsets.all(20),
-                            child: Text("ordernumber"+index.toString()),
+                            child: Text("ordernumber - "+(index+1).toString(),style: TextStyle(fontSize: 25),),
                           ),
                             Text(snapshot.data.docs[index].data().toString(),style: TextStyle(fontSize: 30),),
                           ],
