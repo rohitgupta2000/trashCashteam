@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trashcash_home/Mislanious_Pages/aboutus.dart';
+import 'package:trashcash_home/Mislanious_Pages/help.dart';
+import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/services/auth.dart';
@@ -51,8 +54,10 @@ signMeOut() async{
           SizedBox(height: 2),
           ProfileMenu(
             icon: "assets/privacy.svg",
-            text: "Privacy",
-            press: () {},
+            text: "About us",
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => Aboutus ()),);
+            },
           ),
           ProfileMenu(
             icon: "assets/scroll.svg",
@@ -62,12 +67,17 @@ signMeOut() async{
           ProfileMenu(
             icon: "assets/customer-support.svg",
             text: "Help & Support",
-            press: () {},
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => help()),);
+
+            },
           ),
           ProfileMenu(
             icon: "assets/settings.svg",
             text: "Settings",
-            press: () {},
+            press: () {
+               Navigator.push (context, MaterialPageRoute(builder: (context) => settings()),);
+            },
           ),
           ProfileMenu(
             icon: "assets/logout.svg",
