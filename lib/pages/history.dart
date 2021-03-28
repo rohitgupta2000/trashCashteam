@@ -95,7 +95,7 @@ Widget ordertile(String string){
             decoration: BoxDecoration(
               color: Colors.grey.shade400,
             ),
-            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 15),textAlign: TextAlign.left,)
+            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 18),textAlign: TextAlign.left,)
           
         );
         
@@ -110,7 +110,7 @@ Widget ordertiledes(String string){
             decoration: BoxDecoration(
               color: Colors.grey.shade400,
             ),
-            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 15),textAlign: TextAlign.left,)
+            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 18),textAlign: TextAlign.left,)
           
         );
 }

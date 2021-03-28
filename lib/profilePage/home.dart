@@ -6,7 +6,6 @@ import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/pages/history.dart';
-import 'package:trashcash_home/pages/orders.dart';
 import 'package:trashcash_home/services/auth.dart';
 import 'package:trashcash_home/views/mainpage.dart';
 import 'profile_menu.dart';
@@ -52,48 +51,6 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-<<<<<<< HEAD
-            ),
-          
-          SizedBox(height: 2),
-          ProfileMenu(
-            icon: "assets/privacy.svg",
-            text: "About us",
-            press: () {
-              Navigator.push (context, MaterialPageRoute(builder: (context) => Aboutus ()),);
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/scroll.svg",
-            text: "History",
-            press: () {
-              Navigator.push(
-            context, MaterialPageRoute(builder: (context) => History()));  
-
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/customer-support.svg",
-            text: "Help & Support",
-            press: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => help()),);
-
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/settings.svg",
-            text: "Settings",
-            press: () {
-               Navigator.push (context, MaterialPageRoute(builder: (context) => settings()),);
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/logout.svg",
-            text: "Log Out",
-            press: () {
-              signMeOut();
-            },
-=======
               SizedBox(height: 2),
               ProfileMenu(
                 icon: "assets/privacy.svg",
@@ -110,7 +67,7 @@ class _HomeState extends State<Home> {
                 text: "History",
                 press: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => OrdersPage()));
+                      MaterialPageRoute(builder: (context) => History()));
                 },
               ),
               ProfileMenu(
@@ -141,7 +98,6 @@ class _HomeState extends State<Home> {
                 },
               ),
             ],
->>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
           ),
         ));
   }

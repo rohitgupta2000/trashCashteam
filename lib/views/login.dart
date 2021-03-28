@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 5, vertical: 5),
                         child: Image.asset(
-                          'assets/writing.png',
+                          'assets/trashcashlogo.png',
                           height: 180,
                           width: 550,
                         ),
@@ -216,41 +216,41 @@ class _LoginPageState extends State<LoginPage> {
                                   builder: (context) => SignupPage()));
                         },
                         child: Text.rich(
-                          TextSpan(text: 'Don\'t have an account', children: [
+                          TextSpan(text: 'Don\'t have an account  ', children: [
                             TextSpan(
                               text: 'Signup',
-                              style: TextStyle(color: Color(0xffEE7B23)),
+                              style: TextStyle(color: Color(0xffEE7B23),fontSize: 18),
                             ),
                           ]),
                         ),
                       ),
                       // SizedBox(height:20.0),
 
-                      Center(
-                        child: Text(
-                          'OR'
-                          ' LOGIN WITH',
-                          style: TextStyle(color: Colors.black, fontSize: 20),
-                        ),
-                      ),
-                      SizedBox(
-                          // height:10,
-                          ),
-                      Container(
-                        height: 60,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Image(
-                              image: AssetImage('assets/facebook.png'),
-                            ),
-                            SizedBox(
-                              width: 26,
-                            ),
-                            Image(image: AssetImage('assets/google2.png'))
-                          ],
-                        ),
-                      ),
+                      // Center(
+                      //   child: Text(
+                      //     'OR'
+                      //     ' LOGIN WITH',
+                      //     style: TextStyle(color: Colors.black, fontSize: 20),
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //     // height:10,
+                      //     ),
+                      // Container(
+                      //   height: 60,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.center,
+                      //     children: <Widget>[
+                      //       Image(
+                      //         image: AssetImage('assets/facebook.png'),
+                      //       ),
+                      //       SizedBox(
+                      //         width: 26,
+                      //       ),
+                      //       Image(image: AssetImage('assets/google2.png'))
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ))
                 ],

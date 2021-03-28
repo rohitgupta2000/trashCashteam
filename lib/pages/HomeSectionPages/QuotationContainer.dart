@@ -9,18 +9,18 @@ class QuotationContainer extends StatelessWidget {
         children: [
           Container(
             //comment: this the quotation
-            margin: EdgeInsets.fromLTRB(15, 20, 5, 10),
-            child: Text('“The greatest threat to our planet is the belief”',
+            margin: EdgeInsets.fromLTRB(17, 20, 5, 10),
+            child: Text('“The greatest threat to our planet is the   belief that someone else will save it.”',
                 style: GoogleFonts.aBeeZee(
                     fontSize: 18,
                     color: Colors.white,
                     fontWeight: FontWeight.w400)),
           ),
-          Text("that someone else will save it.",
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400)),
+          // Text("that someone else will save it.",
+          //     style: GoogleFonts.aBeeZee(
+          //         fontSize: 18,
+          //         color: Colors.white,
+          //         fontWeight: FontWeight.w400)),
           Container(
             child: Padding(
               padding: const EdgeInsets.all(9.0),

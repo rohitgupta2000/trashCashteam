@@ -8,15 +8,9 @@ class Address extends StatelessWidget {
   final String details;
   final String description;
   final String category;
-<<<<<<< HEAD
   Address(this.details,this.description,this.category);
  
     @override
-=======
-  Address(this.brand, this.details, this.description, this.category);
-
-  @override
->>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
   Widget build(BuildContext context) {
     DatabaseMethods databaseMethods = new DatabaseMethods();
     final formKey = GlobalKey<FormState>();
@@ -32,7 +26,6 @@ class Address extends StatelessWidget {
       if (formKey.currentState.validate()) {
         Map<String, dynamic> orderMap = {
           "OrderByUsername": constants.myNAme,
-<<<<<<< HEAD
           "Category":category,
           "details": details,
           "description": description,
@@ -43,19 +36,6 @@ class Address extends StatelessWidget {
           "city":citycontroller.text,
           "state":statecontroller.text,
           "mobile number":numbercontroller.text,
-=======
-          "Category": category,
-          "brand": brand,
-          "details": details,
-          "description": description,
-          "Email": emailcontroller.text,
-          "Full name": namecontroller.text,
-          "Adress": addresscontroller.text,
-          "Pincode": pincontroller.text,
-          "city": citycontroller.text,
-          "state": statecontroller.text,
-          "mobile number": numbercontroller.text,
->>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
           "time": DateTime.now().microsecondsSinceEpoch,
         };
         await databaseMethods.saveOrderDetails(orderMap, category);

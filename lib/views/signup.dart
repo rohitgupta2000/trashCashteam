@@ -241,11 +241,11 @@ class _SignupPageState extends State<SignupPage> {
                           },
                           child: Text.rich(
                             TextSpan(
-                                text: 'Already have an account',
+                                text: 'Already have an account  ',
                                 children: [
                                   TextSpan(
                                     text: 'Login',
-                                    style: TextStyle(color: Color(0xffEE7B23)),
+                                    style: TextStyle(color: Color(0xffEE7B23),fontSize: 18),
                                   ),
                                 ]),
                           ),

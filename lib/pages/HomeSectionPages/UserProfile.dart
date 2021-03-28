@@ -34,6 +34,12 @@ class _UserProfileState extends State<UserProfile> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+         Container(
+           margin: EdgeInsets.only(top:0),
+           decoration: BoxDecoration(color: Colors.white),
+                //height: 50,width: 100,
+                child: Image.asset("assets/trashcashlogo.png",height: 80,width: double.infinity,),
+              ),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Container(
             margin: const EdgeInsets.only(bottom: 20),
@@ -44,7 +50,7 @@ class _UserProfileState extends State<UserProfile> {
                   padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
                   child: Text(
                     'Hello ,',
-                    style: GoogleFonts.lacquer(
+                    style: GoogleFonts.lobster(
                         fontSize: 25,
                         // backgroundColor: Colors.red,
                         fontWeight: FontWeight.w400,
@@ -59,10 +65,10 @@ class _UserProfileState extends State<UserProfile> {
                             "${constants.myNAme.substring(1, constants.myNAme.length)}"
                         : "const.myname is null",
                     //'Natasha Meher',
-                    style: GoogleFonts.lacquer(
+                    style: GoogleFonts.lobster(
                       fontSize: 35, letterSpacing: -0.2,
                       // backgroundColor: Colors.red,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w200,
                       color: Colors.white,
                     ),
                   ),
@@ -71,19 +77,21 @@ class _UserProfileState extends State<UserProfile> {
             ),
           ),
           Container(
+            width: 60,height: 60,
               margin: const EdgeInsets.fromLTRB(0, 0, 8, 20),
               child: CircleAvatar(
                   child: Stack(
                 fit: StackFit.expand,
                 children: [
                   ClipOval(
+                    
                     child: FutureBuilder(
                       future: getImage(context, constants.myNAme + "dp"),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return Container(
-                              width: 50,
-                              height: 50,
+                              width: 60,
+                              height: 60,
                               child: snapshot.hasData
                                   ? snapshot.data
                                   : alternativeDp());

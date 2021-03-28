@@ -21,19 +21,14 @@ class EwasteForm extends StatelessWidget {
     sendOrderDetails() async {
       if (formKey.currentState.validate()) {
         await Navigator.push(
-<<<<<<< HEAD
-            context, MaterialPageRoute(builder: (context) => Address(detailsController.text,descriptionController.text,apptitle)));
-    }
-=======
             context,
             MaterialPageRoute(
                 builder: (context) => Address(
-                    brandController.text,
+                   // brandController.text,
                     detailsController.text,
                     descriptionController.text,
                     apptitle)));
       }
->>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
     }
 
     return Scaffold(
@@ -58,21 +53,6 @@ class EwasteForm extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-<<<<<<< HEAD
-              // TextFormField(
-              //   validator: (val) {
-              //     if (val != "")
-              //       return null;
-              //     else
-              //       return "input is required";
-              //   },
-              //   maxLines: 2,
-              //   controller: brandController,
-              //   decoration: InputDecoration(
-              //     hintText: "Brand*",
-              //   ),
-              // ),
-=======
               TextFormField(
                 validator: (val) {
                   if (val != "")
@@ -82,12 +62,11 @@ class EwasteForm extends StatelessWidget {
                 },
                 textAlign: TextAlign.center,
                 maxLines: 2,
-                controller: brandController,
+             //   controller: brandController,
                 decoration: InputDecoration(
                   hintText: "Brand*",
                 ),
               ),
->>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
               SizedBox(height: 2),
               // Container(
               //   alignment: Alignment.topLeft,
