@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -9,40 +11,37 @@ class Sell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            LineAwesomeIcons.times,
-            size: 30,
-            color: Colors.black,
-          ),
           title: Text(
             'What are you offering?',
-            style: GoogleFonts.poppins(fontSize: 23, color: Colors.black),
+            style: TextStyle(fontSize: 23, color: Colors.white),
           ),
-          backgroundColor: Colors.white,
-          elevation: 0,
+          backgroundColor: Colors.green,
         ),
-        extendBodyBehindAppBar: true,
         body: Container(
           decoration: BoxDecoration(color: HexColor('#eee')),
           child: GridView.count(
             primary: false,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 100),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             crossAxisCount: 2,
             crossAxisSpacing: 20,
             mainAxisSpacing: 30,
             children: [
               //comment: this is the e-waste
               GestureDetector(
-                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> Ewaste()));},
-                              child: Container(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Ewaste()));
+                },
+                child: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
                       color: Colors.white,
                       border: new Border.all(
-                          color: Colors.grey[400],
+                          color: Colors.black,
                           width: 1,
                           style: BorderStyle.solid),
-                      borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                      borderRadius:
+                          new BorderRadius.all(new Radius.circular(40)),
                       boxShadow: [
                         new BoxShadow(
                           color: Colors.black,
@@ -65,7 +64,7 @@ class Sell extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 10),
                         child: Text('E-waste',
-                            style: GoogleFonts.lato(
+                            style: TextStyle(
                                 fontSize: 25,
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600)),
@@ -80,10 +79,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -106,7 +105,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 5, vertical: 10),
                       child: Text('Newspapers',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 24,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
@@ -120,10 +119,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -146,7 +145,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('Plastics',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
@@ -160,10 +159,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -186,8 +185,8 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('Cardboards',
-                          style: GoogleFonts.lato(
-                              fontSize: 24,
+                          style: TextStyle(
+                              fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
                     )
@@ -200,10 +199,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -226,7 +225,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('Metals',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
@@ -240,10 +239,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -266,7 +265,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('Glasswares',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
@@ -280,10 +279,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -306,7 +305,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 10, vertical: 10),
                       child: Text('Wires',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),
@@ -320,10 +319,10 @@ class Sell extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: new Border.all(
-                        color: Colors.grey[400],
+                        color: Colors.black,
                         width: 1,
                         style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(5)),
+                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
                     boxShadow: [
                       new BoxShadow(
                         color: Colors.black,
@@ -346,7 +345,7 @@ class Sell extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 2, vertical: 10),
                       child: Text('More ',
-                          style: GoogleFonts.lato(
+                          style: TextStyle(
                               fontSize: 25,
                               color: Colors.black,
                               fontWeight: FontWeight.w600)),

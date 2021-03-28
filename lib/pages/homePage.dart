@@ -38,7 +38,7 @@ class _TrashCashHomeState extends State<TrashCashHome> {
       //   //  backgroundColor: Colors.transparent,
       //   //   elevation: 0,
       // ),
-          body: Container(
+      body: Container(
         //comment: main container
         height: double.infinity,
         width: double.infinity,
@@ -52,30 +52,22 @@ class _TrashCashHomeState extends State<TrashCashHome> {
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30.0),
-                    bottomRight: Radius.circular(30.0),
+                    bottomLeft: Radius.circular(185.0),
+                    bottomRight: Radius.circular(185.0),
                   ),
-                  color: HexColor('#00806d'),
+                  color: HexColor('32a852'),
                 ),
                 child: Column(
-                  children:  [
-                   
+                  children: [
                     UserProfile(),
-                   
                     LocationTextField(),
-                   
                     QuotationContainer(),
-                  
-
                   ],
                 ),
               ),
-              
-             LeaderBoardContainer(),
-           
-               postsThatWeWantToShow(),
+              LeaderBoardContainer(),
+              postsThatWeWantToShow(),
             ],
-            
           ),
         ),
       ),
@@ -106,7 +98,7 @@ Widget postsThatWeWantToShow() {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return Container(
-                            margin: EdgeInsets.symmetric(vertical: 20),
+                            margin: EdgeInsets.symmetric(vertical: 40),
 
                             //width: 100,height: 100,
 

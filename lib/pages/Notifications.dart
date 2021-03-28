@@ -6,7 +6,7 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('NotificationPage'),
+        title: Text('Notifications'),
       ),
       body: Container(
         decoration: BoxDecoration(color: Colors.green),

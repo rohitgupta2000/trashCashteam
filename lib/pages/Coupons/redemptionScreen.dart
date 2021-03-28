@@ -79,7 +79,7 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                         children: [
                           Container(
                               margin: EdgeInsets.only(
-                                  left: displayWidth(context) * 0.37),
+                                  left: displayWidth(context) * 0.36),
                               child: SizedBox(
                                 height: 30,
                                 child: new FloatingActionButton(
@@ -134,7 +134,7 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                                   horizontal: 50, vertical: 12)),
                           elevation: MaterialStateProperty.all(10),
                           backgroundColor:
-                              MaterialStateProperty.all(HexColor('#025955')),
+                              MaterialStateProperty.all(HexColor('#32a852')),
                         ),
                       ),
                     )

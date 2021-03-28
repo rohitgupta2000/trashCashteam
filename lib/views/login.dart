@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  static final  formkey = GlobalKey<FormState>(); //to identify the form uniquely
+  static final formkey = GlobalKey<FormState>(); //to identify the form uniquely
   bool isLoading = false;
 
   AuthMethods authMethods = new AuthMethods();
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                       Column(
                         children: <Widget>[
                           SizedBox(
-                            height: 20,
+                            height: 0,
                           ),
                           Text(
                             "Login",
@@ -101,18 +101,23 @@ class _LoginPageState extends State<LoginPage> {
                                 fontSize: 30, fontWeight: FontWeight.bold),
                           ),
                           SizedBox(
-                            height: 20,
+                            height: 10,
                           ),
                           Text(
                             "Login to your account",
                             style:
                                 TextStyle(fontSize: 17.0, color: Colors.black),
                           ),
-                          SizedBox(
-                            height: 60,
-                          ),
-                          Text('LOGO TRASH CASH'),
                         ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 5),
+                        child: Image.asset(
+                          'assets/writing.png',
+                          height: 180,
+                          width: 550,
+                        ),
                       ),
 
                       Padding(
@@ -122,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Column(
                             children: <Widget>[
                               SizedBox(
-                                height: 100.0,
+                                height: 10.0,
                               ),
                               TextFormField(
                                 controller: emailTextEditngController,
@@ -142,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ),
                               SizedBox(
-                                height: 20.0,
+                                height: 10.0,
                               ),
                               TextFormField(
                                 controller: passwordTextEditngController,
@@ -201,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
 
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 10.0),
                       GestureDetector(
                         onTap: () {
                           // Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
@@ -232,7 +237,7 @@ class _LoginPageState extends State<LoginPage> {
                           // height:10,
                           ),
                       Container(
-                        height: 70,
+                        height: 60,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[

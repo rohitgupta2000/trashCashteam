@@ -19,10 +19,21 @@ class EwasteForm extends StatelessWidget {
     TextEditingController descriptionController = new TextEditingController();
 
     sendOrderDetails() async {
-       if (formKey.currentState.validate()) {
+      if (formKey.currentState.validate()) {
         await Navigator.push(
+<<<<<<< HEAD
             context, MaterialPageRoute(builder: (context) => Address(detailsController.text,descriptionController.text,apptitle)));
     }
+=======
+            context,
+            MaterialPageRoute(
+                builder: (context) => Address(
+                    brandController.text,
+                    detailsController.text,
+                    descriptionController.text,
+                    apptitle)));
+      }
+>>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
     }
 
     return Scaffold(
@@ -30,15 +41,15 @@ class EwasteForm extends StatelessWidget {
         title: Text(apptitle),
       ),
       body: SingleChildScrollView(
-              child: Form(
+        child: Form(
           key: formKey,
           child: Column(
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(4, 5, 0, 5),
+                margin: EdgeInsets.fromLTRB(165, 5, 0, 5),
                 child: Text(
-                  "Include some more details",
+                  "Details",
                   style: TextStyle(
                     fontSize: 25,
                   ),
@@ -47,6 +58,7 @@ class EwasteForm extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
+<<<<<<< HEAD
               // TextFormField(
               //   validator: (val) {
               //     if (val != "")
@@ -60,12 +72,33 @@ class EwasteForm extends StatelessWidget {
               //     hintText: "Brand*",
               //   ),
               // ),
+=======
+              TextFormField(
+                validator: (val) {
+                  if (val != "")
+                    return null;
+                  else
+                    return "Input is required";
+                },
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                controller: brandController,
+                decoration: InputDecoration(
+                  hintText: "Brand*",
+                ),
+              ),
+>>>>>>> 08f0c4d243722c6fa47a61462be05c4ea1c41dcc
               SizedBox(height: 2),
               // Container(
               //   alignment: Alignment.topLeft,
               //   child: Text("Enter the details"),
               // ),
               SizedBox(height: 10),
+              Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.fromLTRB(153, 5, 0, 5),
+                child: Text("Enter the Details"),
+              ),
               TextFormField(
                 validator: (val) {
                   if (val != "")
@@ -73,6 +106,7 @@ class EwasteForm extends StatelessWidget {
                   else
                     return "input is required";
                 },
+                textAlign: TextAlign.center,
                 controller: detailsController,
                 maxLength: 80,
                 maxLines: 3,
@@ -80,7 +114,9 @@ class EwasteForm extends StatelessWidget {
               ),
               Container(
                 alignment: Alignment.topLeft,
-                child: Text("Enter the details"),
+                margin: EdgeInsets.fromLTRB(55, 5, 0, 5),
+                child:
+                    Text("Include condition,features and reason for selling"),
               ),
               TextFormField(
                 controller: descriptionController,
@@ -90,40 +126,43 @@ class EwasteForm extends StatelessWidget {
                   else
                     return "input is required";
                 },
+                textAlign: TextAlign.center,
                 maxLength: 4000,
                 maxLines: 3,
                 decoration:
                     InputDecoration(hintText: "Describe what you are selling*"),
               ),
               // SizedBox(height: 2),
-              Container(
-                alignment: Alignment.topLeft,
-                child: Text("Include condition,features and reason for selling"),
+              SizedBox(
+                height: 20,
               ),
-              SizedBox(height: 20,),
-             
+
               Container(
-                  height: 50,width: 200,
-                  child: FloatingActionButton.extended(
-                    onPressed: () { sendOrderDetails();},
-                   
-                    label: Text("Continue",style: TextStyle(fontSize: 25),),
+                height: 50,
+                width: 200,
+                child: FloatingActionButton.extended(
+                  onPressed: () {
+                    sendOrderDetails();
+                  },
+                  label: Text(
+                    "Continue",
+                    style: TextStyle(fontSize: 25),
                   ),
                 ),
-                // Container(
-                //   margin: EdgeInsets.only(top:20),
-                //   width: 100,
-                //   height: 30,
-                //   child: Text(
-                //     "Continue",
-                //     style: TextStyle(fontSize: 24),
-                //   ),
-                //   decoration: BoxDecoration(
-                //     color: Colors.green,
-                //   ),
-                //   alignment: Alignment.center,
-                // ),
-              
+              ),
+              // Container(
+              //   margin: EdgeInsets.only(top:20),
+              //   width: 100,
+              //   height: 30,
+              //   child: Text(
+              //     "Continue",
+              //     style: TextStyle(fontSize: 24),
+              //   ),
+              //   decoration: BoxDecoration(
+              //     color: Colors.green,
+              //   ),
+              //   alignment: Alignment.center,
+              // ),
             ],
           ),
         ),
