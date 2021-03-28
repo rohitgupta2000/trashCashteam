@@ -32,68 +32,73 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
-      backgroundColor: Colors.lightGreen[200],
-      body: 
-      SingleChildScrollView(
-              child: Column(
-          children: [
-            ProfilePic(),
-            Container(
-             // padding: EdgeInsets.only(bottom:5),
-              child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
-              "${constants.myNAme.substring(1,constants.myNAme.length)}"
-               ,
-               style: GoogleFonts.redressed(
-                          fontSize: 25,
-                          // backgroundColor: Colors.red,
-                         // letterSpacing: -1.5,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                        ),
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ProfilePic(),
+              Container(
+                // padding: EdgeInsets.only(bottom:5),
+                child: Text(
+                  "${constants.myNAme.substring(0, 1).toUpperCase()}" +
+                      "${constants.myNAme.substring(1, constants.myNAme.length)}",
+                  style: GoogleFonts.lora(
+                    fontSize: 25,
+                    // backgroundColor: Colors.red,
+                    // letterSpacing: -1.5,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
               ),
-            ),
-          
-          SizedBox(height: 2),
-          ProfileMenu(
-            icon: "assets/privacy.svg",
-            text: "About us",
-            press: () {
-              Navigator.push (context, MaterialPageRoute(builder: (context) => Aboutus ()),);
-            },
+              SizedBox(height: 2),
+              ProfileMenu(
+                icon: "assets/privacy.svg",
+                text: "About us",
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Aboutus()),
+                  );
+                },
+              ),
+              ProfileMenu(
+                icon: "assets/scroll.svg",
+                text: "History",
+                press: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => OrdersPage()));
+                },
+              ),
+              ProfileMenu(
+                icon: "assets/customer-support.svg",
+                text: "Help & Support",
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => help()),
+                  );
+                },
+              ),
+              ProfileMenu(
+                icon: "assets/settings.svg",
+                text: "Settings",
+                press: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => settings()),
+                  );
+                },
+              ),
+              ProfileMenu(
+                icon: "assets/logout.svg",
+                text: "Log Out",
+                press: () {
+                  signMeOut();
+                },
+              ),
+            ],
           ),
-          ProfileMenu(
-            icon: "assets/scroll.svg",
-            text: "History",
-            press: () {
-              Navigator.push(
-            context, MaterialPageRoute(builder: (context) => OrdersPage()));  
-
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/customer-support.svg",
-            text: "Help & Support",
-            press: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => help()),);
-
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/settings.svg",
-            text: "Settings",
-            press: () {
-               Navigator.push (context, MaterialPageRoute(builder: (context) => settings()),);
-            },
-          ),
-          ProfileMenu(
-            icon: "assets/logout.svg",
-            text: "Log Out",
-            press: () {
-              signMeOut();
-            },
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }

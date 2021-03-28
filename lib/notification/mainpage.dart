@@ -12,7 +12,6 @@ import 'package:trashcash_home/services/database.dart';
 //Rohit, new vouchers has been added
 //Rohit, your order will be picked up by our agent by somedate
 
-
 class Notifications extends StatefulWidget {
   @override
   _NotificationsState createState() => _NotificationsState();
@@ -20,28 +19,24 @@ class Notifications extends StatefulWidget {
 
 class _NotificationsState extends State<Notifications> {
   Stream notificationStream;
-  DatabaseMethods databaseMethods=new DatabaseMethods();
-      
-    
-   Widget notificationList() {
-     
+  DatabaseMethods databaseMethods = new DatabaseMethods();
 
+  Widget notificationList() {
     return StreamBuilder(
       stream: notificationStream,
       builder: (context, snapshot) {
         return snapshot.hasData
-            ? 
-            ListView.builder(
-                itemCount: snapshot.data.docs.length,               
+            ? ListView.builder(
+                itemCount: snapshot.data.docs.length,
                 itemBuilder: (context, index) {
-                
-                 
-                  return NotificationTile(snapshot.data.docs[index].data()["email"].toString()," is on TrashCash, ask him to donate some money");
-                  
-                    //  snapshot.data.docs[index].data()["message"],snapshot.data.docs[index].data()["sendBy"]==Constants.myNAme);
+                  return NotificationTile(
+                      snapshot.data.docs[index].data()["email"].toString(),
+                      " is on TrashCash, ask them to donate some money");
+
+                  //  snapshot.data.docs[index].data()["message"],snapshot.data.docs[index].data()["sendBy"]==Constants.myNAme);
                 },
               )
-             : Container();
+            : Container();
       },
     );
   }
@@ -52,25 +47,21 @@ class _NotificationsState extends State<Notifications> {
     super.initState();
   }
 
-getUserInfo()async{
-  constants.myNAme=await HelperFunctions.getUserNameSharedPreference();
-  databaseMethods.getUsers().then((value){
-
-setState(() {
-  notificationStream=value;
-});
-
-  });
-
-}
-
+  getUserInfo() async {
+    constants.myNAme = await HelperFunctions.getUserNameSharedPreference();
+    databaseMethods.getUsers().then((value) {
+      setState(() {
+        notificationStream = value;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return notificationList();
     // Container(
     //   child: NotificationTile(constants.myNAme," profile has been updated"),
-      
+
     // );
   }
 }

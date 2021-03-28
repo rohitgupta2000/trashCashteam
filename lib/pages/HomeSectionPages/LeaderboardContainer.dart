@@ -17,7 +17,7 @@ class LeaderBoardContainer extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: Image.network(
             'https://cdn.pixabay.com/photo/2013/07/13/12/41/cup-160117_960_720.png',
-            height: 100,
+            height: 130,
             width: 200,
           ),
         ),

@@ -16,18 +16,18 @@ class LocationTextField extends StatelessWidget {
         cursorHeight: 25,
         decoration: InputDecoration(
             filled: false,
-            fillColor: Colors.white10,
+            fillColor: Colors.white,
             prefixIcon: Icon(
               LineAwesomeIcons.map_marker,
-              color: Colors.white60,
+              color: Colors.white,
               size: 20,
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
             hintText: 'H.no 2427, Sector37C, Changidarh ,160036 ',
-            hintStyle: GoogleFonts.merriweather(
-                fontSize: 16, color: HexColor('#ccf2f4'))),
+            hintStyle:
+                GoogleFonts.acme(fontSize: 20, color: HexColor('#ccf2f4'))),
       ),
     );
   }

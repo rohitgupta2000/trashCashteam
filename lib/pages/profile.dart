@@ -5,7 +5,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('ProfilePage'),
+          title: Text('Profile'),
         ),
         body: Container(decoration: BoxDecoration(color: Colors.purpleAccent)));
   }

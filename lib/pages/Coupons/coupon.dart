@@ -49,7 +49,7 @@ class _CouponState extends State<Coupon> {
               )
             ],
           )),
-          backgroundColor: HexColor('#007965'),
+          backgroundColor: HexColor('#32a852'),
         ),
         body: Container(
           height: double.infinity,
@@ -71,7 +71,7 @@ class _CouponState extends State<Coupon> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [HexColor('#fff'), HexColor('#fff')])),
-         // color: Colors.green[100],
+          // color: Colors.green[100],
           // decoration: BoxDecoration(
           //     gradient: LinearGradient(
           //         begin: Alignment.topCenter,
