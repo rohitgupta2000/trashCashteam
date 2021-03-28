@@ -38,44 +38,51 @@ class _TrashCashHomeState extends State<TrashCashHome> {
  // DatabaseMethods.saveImageUrl({"url":"ayushdp"});  
  //   DatabaseMethods.saveImageUrl({"url":"trashcash2r"});
 
-    return Container(
-      //comment: main container
-      height: double.infinity,
-      width: double.infinity,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              //comment: image design and padding for the green container
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-              padding: const EdgeInsets.only(bottom: 80, top: 50),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30.0),
-                  bottomRight: Radius.circular(30.0),
+    return Scaffold(
+      // appBar: AppBar(
+      //  // toolbarOpacity: 0,
+      //   //  backgroundColor: Colors.transparent,
+      //   //   elevation: 0,
+      // ),
+          body: Container(
+        //comment: main container
+        height: double.infinity,
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                //comment: image design and padding for the green container
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                padding: const EdgeInsets.only(bottom: 80, top: 50),
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0),
+                  ),
+                  color: HexColor('#00806d'),
                 ),
-                color: HexColor('#00806d'),
-              ),
-              child: Column(
-                children:  [
-                 
-                  UserProfile(),
-                 
-                  LocationTextField(),
-                 
-                  QuotationContainer(),
-                
+                child: Column(
+                  children:  [
+                   
+                    UserProfile(),
+                   
+                    LocationTextField(),
+                   
+                    QuotationContainer(),
+                  
 
-                ],
+                  ],
+                ),
               ),
-            ),
+              
+             LeaderBoardContainer(),
+           
+               postsThatWeWantToShow(),
+            ],
             
-           LeaderBoardContainer(),
-         
-             postsThatWeWantToShow(),
-          ],
-          
+          ),
         ),
       ),
     );
@@ -83,7 +90,7 @@ class _TrashCashHomeState extends State<TrashCashHome> {
   
 }
 
-Widget postsThatWeWantToShow(){
+ Widget postsThatWeWantToShow(){
 return  Container(
       child: StreamBuilder(
     
@@ -124,7 +131,7 @@ return  Container(
     
                                         return Container(
     
-                                        margin: EdgeInsets.symmetric(vertical:20),
+                                        margin: EdgeInsets.only(bottom:20),
     
                                          //width: 100,height: 100,
     

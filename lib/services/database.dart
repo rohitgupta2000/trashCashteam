@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
+import 'package:trashcash_home/helper/constants.dart';
 
 class DatabaseMethods{
-  
+   
   getUserByUsername(String username)async{
    return await FirebaseFirestore.instance.collection("users")
     .where("name", isEqualTo: username)
@@ -49,9 +51,22 @@ class DatabaseMethods{
 
 
   static saveImageUrl( imageurl){
-    FirebaseFirestore.instance.collection("imageURLs").doc().set(imageurl);
+    
+    FirebaseFirestore.instance.collection("imageURLs").add(imageurl,);
   }
   static getImageUrl(){
-   return  FirebaseFirestore.instance.collection("imageURLs").snapshots();
+   return  FirebaseFirestore.instance.collection("imageURLs").orderBy("time",descending: true).snapshots();
   }
+
+   saveOrderDetails(map,String category){
+
+    FirebaseFirestore.instance.collection("orders").doc().set(map);
+
+  }
+  getOrderDetails() async{
+    return await FirebaseFirestore.instance.collection("orders").orderBy("time",descending: true).snapshots();
+  }
+  
+
+ 
 }

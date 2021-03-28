@@ -31,52 +31,55 @@ signMeOut() async{
 }
     return Scaffold(
       backgroundColor: Colors.lightGreen[200],
-      body: Column(
-        children: [
-          ProfilePic(),
-          Container(
-           // padding: EdgeInsets.only(bottom:5),
-            child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
-            "${constants.myNAme.substring(1,constants.myNAme.length)}"
-             ,
-             style: GoogleFonts.redressed(
-                        fontSize: 25,
-                        // backgroundColor: Colors.red,
-                       // letterSpacing: -1.5,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
+      body: 
+      SingleChildScrollView(
+              child: Column(
+          children: [
+            ProfilePic(),
+            Container(
+             // padding: EdgeInsets.only(bottom:5),
+              child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
+              "${constants.myNAme.substring(1,constants.myNAme.length)}"
+               ,
+               style: GoogleFonts.redressed(
+                          fontSize: 25,
+                          // backgroundColor: Colors.red,
+                         // letterSpacing: -1.5,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+              ),
             ),
-          ),
-          SizedBox(height: 2),
-          ProfileMenu(
-            icon: "assets/privacy.svg",
-            text: "Privacy",
-            press: () {},
-          ),
-          ProfileMenu(
-            icon: "assets/scroll.svg",
-            text: "History",
-            press: () {},
-          ),
-          ProfileMenu(
-            icon: "assets/customer-support.svg",
-            text: "Help & Support",
-            press: () {},
-          ),
-          ProfileMenu(
-            icon: "assets/settings.svg",
-            text: "Settings",
-            press: () {},
-          ),
-          ProfileMenu(
-            icon: "assets/logout.svg",
-            text: "Log Out",
-            press: () { signMeOut();
-              
-            },
-          ),
-        ],
+            SizedBox(height: 2),
+            ProfileMenu(
+              icon: "assets/privacy.svg",
+              text: "Privacy",
+              press: () {},
+            ),
+            ProfileMenu(
+              icon: "assets/scroll.svg",
+              text: "History",
+              press: () {},
+            ),
+            ProfileMenu(
+              icon: "assets/customer-support.svg",
+              text: "Help & Support",
+              press: () {},
+            ),
+            ProfileMenu(
+              icon: "assets/settings.svg",
+              text: "Settings",
+              press: () {},
+            ),
+            ProfileMenu(
+              icon: "assets/logout.svg",
+              text: "Log Out",
+              press: () { signMeOut();
+                
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
