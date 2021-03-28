@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trashcash_home/Mislanious_Pages/aboutus.dart';
+import 'package:trashcash_home/Mislanious_Pages/help.dart';
+import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/services/auth.dart';
@@ -50,6 +53,7 @@ signMeOut() async{
                         ),
               ),
             ),
+<<<<<<< HEAD
             SizedBox(height: 2),
             ProfileMenu(
               icon: "assets/privacy.svg",
@@ -80,6 +84,45 @@ signMeOut() async{
             ),
           ],
         ),
+=======
+          ),
+          SizedBox(height: 2),
+          ProfileMenu(
+            icon: "assets/privacy.svg",
+            text: "About us",
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => Aboutus ()),);
+            },
+          ),
+          ProfileMenu(
+            icon: "assets/scroll.svg",
+            text: "History",
+            press: () {},
+          ),
+          ProfileMenu(
+            icon: "assets/customer-support.svg",
+            text: "Help & Support",
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => help()),);
+
+            },
+          ),
+          ProfileMenu(
+            icon: "assets/settings.svg",
+            text: "Settings",
+            press: () {
+               Navigator.push (context, MaterialPageRoute(builder: (context) => settings()),);
+            },
+          ),
+          ProfileMenu(
+            icon: "assets/logout.svg",
+            text: "Log Out",
+            press: () { signMeOut();
+              
+            },
+          ),
+        ],
+>>>>>>> b65541eadf3bad7bcfb38b410762e6dcef4f8192
       ),
     );
   }
