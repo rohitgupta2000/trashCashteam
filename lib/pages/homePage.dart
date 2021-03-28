@@ -1,5 +1,3 @@
-
-
 //import 'dart:js';
 
 import 'package:firebase_storage/firebase_storage.dart';
@@ -17,26 +15,22 @@ import 'package:trashcash_home/services/database.dart';
 class TrashCashHome extends StatefulWidget {
   @override
   _TrashCashHomeState createState() => _TrashCashHomeState();
-
-
 }
 
 class _TrashCashHomeState extends State<TrashCashHome> {
-
 //  @override
 //   void initState() {
-  
+
 //     setState(() {
-      
+
 //     });
 //      super.initState();
 //   }
-  
 
   @override
   Widget build(BuildContext context) {
- // DatabaseMethods.saveImageUrl({"url":"ayushdp"});  
- //   DatabaseMethods.saveImageUrl({"url":"trashcash2r"});
+    // DatabaseMethods.saveImageUrl({"url":"ayushdp"});
+    //   DatabaseMethods.saveImageUrl({"url":"trashcash2r"});
 
     return Scaffold(
       // appBar: AppBar(
@@ -75,6 +69,21 @@ class _TrashCashHomeState extends State<TrashCashHome> {
 
                   ],
                 ),
+<<<<<<< HEAD
+                color: HexColor('#32a852'),
+              ),
+              child: Column(
+                children: [
+                  UserProfile(),
+                  LocationTextField(),
+                  QuotationContainer(),
+                ],
+              ),
+            ),
+            LeaderBoardContainer(),
+            postsThatWeWantToShow(),
+          ],
+=======
               ),
               
              LeaderBoardContainer(),
@@ -83,13 +92,63 @@ class _TrashCashHomeState extends State<TrashCashHome> {
             ],
             
           ),
+>>>>>>> main
         ),
       ),
     );
   }
-  
 }
 
+<<<<<<< HEAD
+Widget postsThatWeWantToShow() {
+  return Container(
+    child: StreamBuilder(
+        stream: DatabaseMethods.getImageUrl(),
+        builder: (context, snapshot) {
+          return !snapshot.hasData
+              ? Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  shrinkWrap: true,
+                  physics: ClampingScrollPhysics(),
+                  itemCount: snapshot.data.docs.length,
+                  itemBuilder: (context, index) {
+                    //   print("shuruuuu "+ getImages(snapshot.data.docs[index].data()["url"]).toString()+"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+
+                    print((snapshot.data.docs[index].data()["url"]) +
+                        "dppppppppppp");
+
+                    return FutureBuilder(
+                      future: getImage(
+                          snapshot.data.docs[index].data()["url"].toString()),
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return Container(
+                            margin: EdgeInsets.symmetric(vertical: 20),
+
+                            //width: 100,height: 100,
+
+                            child: snapshot.data,
+                          );
+                        }
+
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Container(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(),
+                          );
+                        }
+
+                        return Container();
+                      },
+                    );
+
+                    //  getImages(snapshot.data.docs[index].data()["url"].toString());
+                  });
+        }),
+  );
+=======
  Widget postsThatWeWantToShow(){
 return  Container(
       child: StreamBuilder(
@@ -168,6 +227,7 @@ return  Container(
       }),
   
 );
+>>>>>>> main
 // FutureBuilder(
 //                                 future: getImage("abc"),
 //                                 builder: (context,snapshot){
@@ -183,9 +243,6 @@ return  Container(
 //                                   }
 //                                   return Container();
 //                                 },) ;
-
-
-
 }
 //  getImages(url){
 // Image image;
@@ -193,31 +250,23 @@ return  Container(
 // return image;
 // }
 
-
-
-
-
-Future <Widget> getImage( String imageName)async{
+Future<Widget> getImage(String imageName) async {
   BuildContext context;
-Image image;
-await FirebaseStorageService.loadImage(context, imageName).then((value) {
-  image=Image.network(
-    value.toString(), fit: BoxFit.fill,
-  );
-});
-return image;
-
+  Image image;
+  await FirebaseStorageService.loadImage(context, imageName).then((value) {
+    image = Image.network(
+      value.toString(),
+      fit: BoxFit.fill,
+    );
+  });
+  return image;
 }
 
-
-
-
-
-class FirebaseStorageService extends ChangeNotifier{
+class FirebaseStorageService extends ChangeNotifier {
   FirebaseStorageService();
- 
-  static Future<dynamic> loadImage(BuildContext context,String image)async{
-    return await FirebaseStorage.instance.ref().child(image).getDownloadURL(); 
+
+  static Future<dynamic> loadImage(BuildContext context, String image) async {
+    return await FirebaseStorage.instance.ref().child(image).getDownloadURL();
   }
 // static Future<dynamic> listExample() async {
 //  Future image;
@@ -226,17 +275,17 @@ class FirebaseStorageService extends ChangeNotifier{
 
 //         // var storageref=FirebaseStorage.instance.ref("avai");
 //         // storageref.listAll().then(Function(result){
-//         //   result.items.forEach(Function(imageRef) { 
+//         //   result.items.forEach(Function(imageRef) {
 //         //       displayImage(imageRef);
 //         //   });
 //         // });
 
 //     result.items.forEach((Reference ref) {
 //     image=  getImage("trashcash2r.png");
-    
+
 //         print('Found file: $ref');
 //     }
-    
+
 //     );
 
 //     result.prefixes.forEach((Reference ref) {
@@ -246,5 +295,3 @@ class FirebaseStorageService extends ChangeNotifier{
 
 // }
 }
-
-

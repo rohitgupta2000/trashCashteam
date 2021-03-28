@@ -24,7 +24,7 @@ class _UploadingImageToFirebaseStorageState
 
     setState(() {
       _imageFile = File(pickedFile.path);
-    });    
+    });
   }
 
   Future uploadImageToFirebase(BuildContext context) async {
@@ -35,7 +35,7 @@ class _UploadingImageToFirebaseStorageState
     await uploadTask.then((res) {
       res.ref.getDownloadURL();
     });
-  //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
+    //  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
   }
 
   @override
@@ -62,7 +62,7 @@ class _UploadingImageToFirebaseStorageState
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Text(
-                      "Uploade profile picture",
+                      "Upload profile picture",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 28,

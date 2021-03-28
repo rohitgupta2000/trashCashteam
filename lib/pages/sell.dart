@@ -21,6 +21,9 @@ class Sell extends StatelessWidget {
           backgroundColor: Colors.white,
           elevation: 0,
         ),
+<<<<<<< HEAD
+        body: Container(decoration: BoxDecoration(color: Colors.white)));
+=======
         extendBodyBehindAppBar: true,
         body: Container(
           decoration: BoxDecoration(color: HexColor('#eee')),
@@ -357,5 +360,6 @@ class Sell extends StatelessWidget {
             ],
           ),
         ));
+>>>>>>> main
   }
 }
