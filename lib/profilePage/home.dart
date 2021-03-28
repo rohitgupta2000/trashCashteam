@@ -18,20 +18,18 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    AuthMethods authMethods = new AuthMethods();
 
+    signMeOut() async {
+      authMethods.signOut();
+      await HelperFunctions.saveuserLoggedInSharedPreference(false);
+      //  await   HelperFunctions.saveUserEmailSharedPreference("");
+      //  await HelperFunctions.saveUserNameSharedPreference("");
 
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => MainPage()));
+    }
 
-    AuthMethods authMethods=new AuthMethods();
-
-signMeOut() async{
-   authMethods.signOut();
-           await    HelperFunctions.saveuserLoggedInSharedPreference(false);
-            //  await   HelperFunctions.saveUserEmailSharedPreference("");
-            //  await HelperFunctions.saveUserNameSharedPreference("");
-       
-
-               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MainPage()));
-}
     return Scaffold(
       backgroundColor: Colors.lightGreen[200],
       body: 
@@ -85,8 +83,8 @@ signMeOut() async{
           ProfileMenu(
             icon: "assets/logout.svg",
             text: "Log Out",
-            press: () { signMeOut();
-              
+            press: () {
+              signMeOut();
             },
           ),
         ],

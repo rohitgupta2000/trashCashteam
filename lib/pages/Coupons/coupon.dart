@@ -26,8 +26,7 @@ class _CouponState extends State<Coupon> {
                 padding: const EdgeInsets.fromLTRB(10, 8, 0, 5),
                 child: Text(
                   'Coupons',
-                  style: GoogleFonts.lora(
-                      fontSize: 26, fontWeight: FontWeight.w300),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                 ),
               ),
               Row(
@@ -67,7 +66,12 @@ class _CouponState extends State<Coupon> {
               ],
             ),
           ),
-          color: Colors.green[100],
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [HexColor('#fff'), HexColor('#fff')])),
+         // color: Colors.green[100],
           // decoration: BoxDecoration(
           //     gradient: LinearGradient(
           //         begin: Alignment.topCenter,
