@@ -5,6 +5,7 @@ import 'package:trashcash_home/Mislanious_Pages/help.dart';
 import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
+import 'package:trashcash_home/pages/history.dart';
 import 'package:trashcash_home/pages/orders.dart';
 import 'package:trashcash_home/services/auth.dart';
 import 'package:trashcash_home/views/mainpage.dart';
@@ -66,7 +67,7 @@ class _HomeState extends State<Home> {
             text: "History",
             press: () {
               Navigator.push(
-            context, MaterialPageRoute(builder: (context) => OrdersPage()));  
+            context, MaterialPageRoute(builder: (context) => History()));  
 
             },
           ),

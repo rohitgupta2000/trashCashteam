@@ -13,15 +13,15 @@ class EwasteForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
 
-    DatabaseMethods databaseMethods = new DatabaseMethods();
-    TextEditingController brandController = new TextEditingController();
+  //  DatabaseMethods databaseMethods = new DatabaseMethods();
+   // TextEditingController brandController = new TextEditingController();
     TextEditingController detailsController = new TextEditingController();
     TextEditingController descriptionController = new TextEditingController();
 
     sendOrderDetails() async {
        if (formKey.currentState.validate()) {
         await Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Address(brandController.text,detailsController.text,descriptionController.text,apptitle)));
+            context, MaterialPageRoute(builder: (context) => Address(detailsController.text,descriptionController.text,apptitle)));
     }
     }
 
@@ -47,19 +47,19 @@ class EwasteForm extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              TextFormField(
-                validator: (val) {
-                  if (val != "")
-                    return null;
-                  else
-                    return "input is required";
-                },
-                maxLines: 2,
-                controller: brandController,
-                decoration: InputDecoration(
-                  hintText: "Brand*",
-                ),
-              ),
+              // TextFormField(
+              //   validator: (val) {
+              //     if (val != "")
+              //       return null;
+              //     else
+              //       return "input is required";
+              //   },
+              //   maxLines: 2,
+              //   controller: brandController,
+              //   decoration: InputDecoration(
+              //     hintText: "Brand*",
+              //   ),
+              // ),
               SizedBox(height: 2),
               // Container(
               //   alignment: Alignment.topLeft,

@@ -65,7 +65,7 @@ uploadTask.then((res) {
    res.ref.getDownloadURL();
 });
 DatabaseMethods.saveImageUrl({"url":'$fileName', "time": DateTime.now().microsecondsSinceEpoch});
-Navigator.push(context, MaterialPageRoute(builder: (context)=> MyAdminHomePage(title: 'Admin Dashboard')));
+Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyAdminHomePage(title: 'Admin Dashboard')));
   }
 
   @override

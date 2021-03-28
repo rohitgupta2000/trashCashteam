@@ -13,7 +13,7 @@ class _OrdersPageState extends State<OrdersPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text("Your orders")),
+      appBar: AppBar(title:Text("Orders")),
       body:SingleChildScrollView(
               child: Column(
           children: [
@@ -30,10 +30,33 @@ class _OrdersPageState extends State<OrdersPage> {
 
                         return Column(
                           children: [Container(
-                            margin: EdgeInsets.all(20),
-                            child: Text("ordernumber - "+(index+1).toString(),style: TextStyle(fontSize: 25),),
+                            margin: EdgeInsets.all(15),
+                            child: Text("Order Number - "+(index+1).toString(),style: TextStyle(fontSize: 25),),
                           ),
-                            Text(snapshot.data.docs[index].data().toString(),style: TextStyle(fontSize: 30),),
+                          Column(children: [
+                          ordertile("Category :  "+snapshot.data.docs[index].data()["Category"].toString()),                            
+                          ordertile("Details :  "+snapshot.data.docs[index].data()["details"].toString()),
+                          ordertiledes("Description :  "+snapshot.data.docs[index].data()["description"].toString()),
+                          Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(color: Colors.blue[200]),
+                            child: Text("Pickup Details",style: TextStyle(color: Colors.red),),
+                          ),
+                          ordertile("Full Name :  "+snapshot.data.docs[index].data()["Full name"].toString()),
+                           ordertile("Email-Id :  "+snapshot.data.docs[index].data()["Email"].toString()),
+                            ordertile("Address :  "+snapshot.data.docs[index].data()["Address"].toString()),
+                             ordertile("Pincode :  "+snapshot.data.docs[index].data()["Pincode"].toString()),
+                           ordertile("City :  "+snapshot.data.docs[index].data()["city"].toString()),
+                            ordertile("State :  "+snapshot.data.docs[index].data()["state"].toString()),
+                             ordertile("Mobile Number :  "+snapshot.data.docs[index].data()["mobile number"].toString()),
+
+
+
+
+                          ],),
+                         
+                           
+                       //     Text(""+snapshot.data.docs[index].data()[""].toString(),style: TextStyle(fontSize: 20),),
                           ],
                         );
 
@@ -62,4 +85,31 @@ setState(() {
 
 }
 
+}
+Widget ordertile(String string){
+ return Container(
+          //  margin: EdgeInsets.all(2),
+            width: double.infinity,height: 20,
+           // alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade400,
+            ),
+            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 18),textAlign: TextAlign.left,)
+          
+        );
+        
+        
+
+}
+Widget ordertiledes(String string){
+ return Container(
+          //  margin: EdgeInsets.all(2),
+            width: double.infinity,height: 50,
+           // alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              color: Colors.grey.shade400,
+            ),
+            child: Text(string,style: TextStyle(color: Colors.black,fontSize: 18),textAlign: TextAlign.left,)
+          
+        );
 }

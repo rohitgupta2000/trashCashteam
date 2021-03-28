@@ -4,11 +4,11 @@ import 'package:trashcash_home/pages/orderPlaced.dart';
 import 'package:trashcash_home/services/database.dart';
 
 class Address extends StatelessWidget {
-  final String brand;
+
   final String details;
   final String description;
   final String category;
-  Address(this.brand,this.details,this.description,this.category);
+  Address(this.details,this.description,this.category);
  
     @override
   Widget build(BuildContext context) {
@@ -27,12 +27,11 @@ class Address extends StatelessWidget {
         Map<String, dynamic> orderMap = {
           "OrderByUsername": constants.myNAme,
           "Category":category,
-          "brand": brand,
           "details": details,
           "description": description,
           "Email":emailcontroller.text,
           "Full name":namecontroller.text,
-          "Adress":addresscontroller.text,
+          "Address":addresscontroller.text,
           "Pincode":pincontroller.text,
           "city":citycontroller.text,
           "state":statecontroller.text,
