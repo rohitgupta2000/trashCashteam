@@ -32,23 +32,44 @@ class _TrashCashHomeState extends State<TrashCashHome> {
     // DatabaseMethods.saveImageUrl({"url":"ayushdp"});
     //   DatabaseMethods.saveImageUrl({"url":"trashcash2r"});
 
-    return Container(
-      //comment: main container
-      height: double.infinity,
-      width: double.infinity,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              //comment: image design and padding for the green container
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-              padding: const EdgeInsets.only(bottom: 80, top: 50),
-              decoration: BoxDecoration(
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30.0),
-                  bottomRight: Radius.circular(30.0),
+    return Scaffold(
+      // appBar: AppBar(
+      //  // toolbarOpacity: 0,
+      //   //  backgroundColor: Colors.transparent,
+      //   //   elevation: 0,
+      // ),
+          body: Container(
+        //comment: main container
+        height: double.infinity,
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                //comment: image design and padding for the green container
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
+                padding: const EdgeInsets.only(bottom: 80, top: 50),
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30.0),
+                    bottomRight: Radius.circular(30.0),
+                  ),
+                  color: HexColor('#00806d'),
                 ),
+                child: Column(
+                  children:  [
+                   
+                    UserProfile(),
+                   
+                    LocationTextField(),
+                   
+                    QuotationContainer(),
+                  
+
+                  ],
+                ),
+<<<<<<< HEAD
                 color: HexColor('#32a852'),
               ),
               child: Column(
@@ -62,12 +83,23 @@ class _TrashCashHomeState extends State<TrashCashHome> {
             LeaderBoardContainer(),
             postsThatWeWantToShow(),
           ],
+=======
+              ),
+              
+             LeaderBoardContainer(),
+           
+               postsThatWeWantToShow(),
+            ],
+            
+          ),
+>>>>>>> main
         ),
       ),
     );
   }
 }
 
+<<<<<<< HEAD
 Widget postsThatWeWantToShow() {
   return Container(
     child: StreamBuilder(
@@ -116,6 +148,86 @@ Widget postsThatWeWantToShow() {
                   });
         }),
   );
+=======
+ Widget postsThatWeWantToShow(){
+return  Container(
+      child: StreamBuilder(
+    
+      stream: DatabaseMethods.getImageUrl(),
+    
+      
+    
+      builder: (context,snapshot){
+    
+        return !snapshot.hasData?
+    
+        Center(child:CircularProgressIndicator()):
+    
+        ListView.builder(
+    
+          shrinkWrap: true,
+          physics: ClampingScrollPhysics(),
+    
+          itemCount: snapshot.data.docs.length,
+    
+          itemBuilder: (context,index){
+    
+    
+    
+           //   print("shuruuuu "+ getImages(snapshot.data.docs[index].data()["url"]).toString()+"hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+    
+              print((snapshot.data.docs[index].data()["url"])+"dppppppppppp");
+    
+            return 
+    
+            FutureBuilder(
+    
+                                     future: getImage(snapshot.data.docs[index].data()["url"].toString()),
+    
+                                    builder: (context,snapshot){
+    
+                                      if(snapshot.connectionState==ConnectionState.done){
+    
+                                        return Container(
+    
+                                        margin: EdgeInsets.only(bottom:20),
+    
+                                         //width: 100,height: 100,
+    
+                                          child: snapshot.data,);
+    
+                                      }
+    
+                                        if(snapshot.connectionState==ConnectionState.waiting){
+    
+                                        return Container(
+    
+                                          width: 20,height: 20,
+    
+                                          child: CircularProgressIndicator(),);
+    
+                                      }
+    
+                                      return Container();
+    
+                                    },) ;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+          //  getImages(snapshot.data.docs[index].data()["url"].toString());
+    
+          });
+    
+      }),
+  
+);
+>>>>>>> main
 // FutureBuilder(
 //                                 future: getImage("abc"),
 //                                 builder: (context,snapshot){

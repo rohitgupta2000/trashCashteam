@@ -6,7 +6,7 @@ import 'package:trashcash_home/pages/Coupons/redemptionScreen.dart';
 import 'package:trashcash_home/profilePage/profile_screen.dart';
 
 class Clothing extends StatelessWidget {
-  String string="Clothing";
+  final String string="Clothing";
   @override
   Widget build(BuildContext context) {
     return Container(

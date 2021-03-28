@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trashcash_home/Mislanious_Pages/aboutus.dart';
+import 'package:trashcash_home/Mislanious_Pages/help.dart';
+import 'package:trashcash_home/Mislanious_Pages/setting.dart';
 import 'package:trashcash_home/helper/constants.dart';
 import 'package:trashcash_home/helper/helperfunction.dart';
 import 'package:trashcash_home/services/auth.dart';
@@ -28,6 +31,7 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Colors.white,
       body: Column(
         children: [
@@ -43,14 +47,36 @@ class _HomeState extends State<Home> {
                 // letterSpacing: -1.5,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
+=======
+      backgroundColor: Colors.lightGreen[200],
+      body: 
+      SingleChildScrollView(
+              child: Column(
+          children: [
+            ProfilePic(),
+            Container(
+             // padding: EdgeInsets.only(bottom:5),
+              child: Text("${constants.myNAme.substring(0,1).toUpperCase()}"+
+              "${constants.myNAme.substring(1,constants.myNAme.length)}"
+               ,
+               style: GoogleFonts.redressed(
+                          fontSize: 25,
+                          // backgroundColor: Colors.red,
+                         // letterSpacing: -1.5,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+>>>>>>> main
               ),
             ),
-          ),
+          
           SizedBox(height: 2),
           ProfileMenu(
             icon: "assets/privacy.svg",
-            text: "Privacy",
-            press: () {},
+            text: "About us",
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => Aboutus ()),);
+            },
           ),
           ProfileMenu(
             icon: "assets/scroll.svg",
@@ -60,12 +86,17 @@ class _HomeState extends State<Home> {
           ProfileMenu(
             icon: "assets/customer-support.svg",
             text: "Help & Support",
-            press: () {},
+            press: () {
+              Navigator.push (context, MaterialPageRoute(builder: (context) => help()),);
+
+            },
           ),
           ProfileMenu(
             icon: "assets/settings.svg",
             text: "Settings",
-            press: () {},
+            press: () {
+               Navigator.push (context, MaterialPageRoute(builder: (context) => settings()),);
+            },
           ),
           ProfileMenu(
             icon: "assets/logout.svg",
@@ -76,6 +107,6 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-    );
+    ));
   }
 }
