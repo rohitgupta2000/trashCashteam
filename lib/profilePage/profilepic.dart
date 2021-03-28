@@ -39,9 +39,9 @@ class _ProfilePicState extends State<ProfilePic> {
     });
     await uploadImageToFirebase(context);
     await HelperFunctions.saveUserDpSharedPreference(true);
-    constants.isDpUpdated=true;
+    constants.isDpUpdated = true;
     print("upload finishedddddddddddddddddddddddddd");
-    
+
     setState(() {
       isloading = false;
     });
@@ -51,7 +51,7 @@ class _ProfilePicState extends State<ProfilePic> {
     print("uploaadddd intiateddddddddddddddddddddddddddddd");
     //String fileName = "abc"; //basename(_imageFile.path);
     FirebaseStorage storage = FirebaseStorage.instance;
-    Reference ref = storage.ref().child(constants.myNAme+"dp");
+    Reference ref = storage.ref().child(constants.myNAme + "dp");
     UploadTask uploadTask = ref.putFile(_imageFile);
     await uploadTask.then((res) {
       res.ref.getDownloadURL();
@@ -61,51 +61,55 @@ class _ProfilePicState extends State<ProfilePic> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
-                margin: EdgeInsets.only(top: 15),
-                child: SizedBox(
-                    height: 150,
-                    width: 150,
-                    child: Stack(fit: StackFit.expand,
-                        // overflow: Overflow.visible,
-                        children: [
-                          CircleAvatar(
-                            child: Stack(
-                              fit: StackFit.expand,
-                                children:[
-                                      ClipOval(
-                                
-                                child: 
-                                 FutureBuilder( 
-                                  future: getImage(context, constants.myNAme+"dp"),
-                                  builder: (context,snapshot){
-                                    if(snapshot.connectionState==ConnectionState.done){
-                                      return Container(
-                                       // width: 50,height: 50,
-                                        child:snapshot.hasData? snapshot.data:alternativeDpforProfilePic(),);
-                                    }
-                                      if(snapshot.connectionState==ConnectionState.waiting){
-                                      return Container(
-                                        width: 20,height: 20,
-                                        child: CircularProgressIndicator(),);
-                                    }
-                                    return Container();
-                                  },
-                                ),
-                                //  Image.file(_imageFile,
-                                //     height: 500, width: 200, fit: BoxFit.fill),
-                              )],
-                            ),
-                            radius: 50,
-                          ),
-                        ])),
-              );
-              
-   
-}
- Widget alternativeDpforProfilePic(){
-   return    isloading
+    return Container(
+      margin: EdgeInsets.only(top: 15),
+      child: SizedBox(
+          height: 150,
+          width: 150,
+          child: Stack(fit: StackFit.expand,
+              // overflow: Overflow.visible,
+              children: [
+                CircleAvatar(
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      ClipOval(
+                        child: FutureBuilder(
+                          future: getImage(context, constants.myNAme + "dp"),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.done) {
+                              return Container(
+                                // width: 50,height: 50,
+                                child: snapshot.hasData
+                                    ? snapshot.data
+                                    : alternativeDpforProfilePic(),
+                              );
+                            }
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return Container(
+                                width: 20,
+                                height: 20,
+                                child: CircularProgressIndicator(),
+                              );
+                            }
+                            return Container();
+                          },
+                        ),
+                        //  Image.file(_imageFile,
+                        //     height: 500, width: 200, fit: BoxFit.fill),
+                      )
+                    ],
+                  ),
+                  radius: 50,
+                ),
+              ])),
+    );
+  }
+
+  Widget alternativeDpforProfilePic() {
+    return isloading
         ? Container(
             child: Center(
             child: CircularProgressIndicator(),
@@ -121,19 +125,27 @@ class _ProfilePicState extends State<ProfilePic> {
                         children: [
                           CircleAvatar(
                             child: ClipOval(
-                              child: 
-                               FutureBuilder(
-                                future: getImage(context, constants.myNAme+"dp"),
-                                builder: (context,snapshot){
-                                  if(snapshot.connectionState==ConnectionState.done){
+                              child: FutureBuilder(
+                                future:
+                                    getImage(context, constants.myNAme + "dp"),
+                                builder: (context, snapshot) {
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.done) {
                                     return Container(
-                                      width: 50,height: 50,
-                                      child:snapshot.hasData? snapshot.data: CircularProgressIndicator(),);
+                                      width: 50,
+                                      height: 50,
+                                      child: snapshot.hasData
+                                          ? snapshot.data
+                                          : CircularProgressIndicator(),
+                                    );
                                   }
-                                    if(snapshot.connectionState==ConnectionState.waiting){
+                                  if (snapshot.connectionState ==
+                                      ConnectionState.waiting) {
                                     return Container(
-                                      width: 20,height: 20,
-                                      child: CircularProgressIndicator(),);
+                                      width: 20,
+                                      height: 20,
+                                      child: CircularProgressIndicator(),
+                                    );
                                   }
                                   return Container();
                                 },
@@ -145,10 +157,8 @@ class _ProfilePicState extends State<ProfilePic> {
                           ),
                         ])),
               )
-
-             :
-            Container(
-              //  padding: EdgeInsets.only(top: 20),
+            : Container(
+                //  padding: EdgeInsets.only(top: 20),
                 child: SizedBox(
                   height: 180,
                   width: 180,
@@ -170,7 +180,7 @@ class _ProfilePicState extends State<ProfilePic> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            color: Color(0xFFF5F6F9),
+                            color: Color(0xFFF6EE9C),
                             onPressed: () {
                               pickImage();
 
@@ -186,25 +196,22 @@ class _ProfilePicState extends State<ProfilePic> {
                 ),
               );
   }
-
-
-    }
-   
-
-Future <Widget> getImage(BuildContext context, String imageName)async{
-Image image;
-await FirebaseStorageService.loadImage(context, imageName).then((value) {
-  image=Image.network(
-    value.toString(),fit: BoxFit.fill,
-  );
-});
-return image;
-
 }
 
-class FirebaseStorageService extends ChangeNotifier{
+Future<Widget> getImage(BuildContext context, String imageName) async {
+  Image image;
+  await FirebaseStorageService.loadImage(context, imageName).then((value) {
+    image = Image.network(
+      value.toString(),
+      fit: BoxFit.fill,
+    );
+  });
+  return image;
+}
+
+class FirebaseStorageService extends ChangeNotifier {
   FirebaseStorageService();
-  static Future<dynamic> loadImage(BuildContext context,String image)async{
+  static Future<dynamic> loadImage(BuildContext context, String image) async {
     return await FirebaseStorage.instance.ref().child(image).getDownloadURL();
   }
 }

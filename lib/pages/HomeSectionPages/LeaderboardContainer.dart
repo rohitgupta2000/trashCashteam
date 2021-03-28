@@ -114,7 +114,7 @@ class LeaderBoardContainer extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: 8),
           decoration: BoxDecoration(
               border: Border(
-                  bottom: BorderSide(color: HexColor('#b3b3b3'), width: 1))),
+                  bottom: BorderSide(color: HexColor('#fff'), width: 1))),
           child: Column(children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

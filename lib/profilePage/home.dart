@@ -31,6 +31,23 @@ class _HomeState extends State<Home> {
     }
 
     return Scaffold(
+<<<<<<< HEAD
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          ProfilePic(),
+          Container(
+            // padding: EdgeInsets.only(bottom:5),
+            child: Text(
+              "${constants.myNAme.substring(0, 1).toUpperCase()}" +
+                  "${constants.myNAme.substring(1, constants.myNAme.length)}",
+              style: TextStyle(
+                fontSize: 25,
+                // backgroundColor: Colors.red,
+                // letterSpacing: -1.5,
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+=======
       backgroundColor: Colors.lightGreen[200],
       body: 
       SingleChildScrollView(
@@ -49,6 +66,7 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w600,
                           color: Colors.black,
                         ),
+>>>>>>> main
               ),
             ),
           

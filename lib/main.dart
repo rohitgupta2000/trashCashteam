@@ -69,10 +69,10 @@ class _TrashCashState extends State<TrashCash> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "TrashCash",
-      theme: ThemeData(primarySwatch: Colors.teal),
+      theme: ThemeData(primarySwatch: Colors.green),
       home: isUserloggedIn != null
           ? isUserloggedIn
-              ? HomePage()
+              ? SplashScreen()
               : SplashScreen()
           : SplashScreen(),
       //HomePage(),
