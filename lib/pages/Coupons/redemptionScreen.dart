@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:trashcash_home/mediaQuery/sizers_helpers.dart';
+import 'package:trashcash_home/pages/afterRedemption.dart';
 
 class RedemptionScreen extends StatefulWidget {
   final String frontCoupon;
@@ -124,7 +125,16 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(30, 20, 10, 10),
                       child: ElevatedButton(
-                        onPressed: (() {}),
+                        onPressed: (() {
+                           Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => AfterRedemption(
+                            ) ));
+          
+                          
+                          
+                        }),
                         child: Text(
                           'REDEEM NOW',
                           style: GoogleFonts.nunitoSans(fontSize: 22),
