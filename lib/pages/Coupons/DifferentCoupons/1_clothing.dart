@@ -6,7 +6,7 @@ import 'package:trashcash_home/pages/Coupons/redemptionScreen.dart';
 import 'package:trashcash_home/profilePage/profile_screen.dart';
 
 class Clothing extends StatelessWidget {
-  final String string="Clothing";
+  final String string = "Clothing";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,11 +17,16 @@ class Clothing extends StatelessWidget {
         direction: FlipDirection.VERTICAL,
         front: Image.asset('assets/coupons/1_front.PNG'),
         back: GestureDetector(
-          onDoubleTap:(){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> RedemptionScreen(string)));
-          } ,
-                  child: Container
-          (child: Image.asset('assets/coupons/1_back.PNG')),
+          onDoubleTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => RedemptionScreen(
+                        'assets/coupons/1_front.PNG',
+                        'assets/coupons/001_couponBg.png',
+                        HexColor('#32a852'))));
+          },
+          child: Container(child: Image.asset('assets/coupons/1_back.PNG')),
         ),
       ),
     );

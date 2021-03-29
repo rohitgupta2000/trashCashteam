@@ -5,8 +5,10 @@ import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:trashcash_home/mediaQuery/sizers_helpers.dart';
 
 class RedemptionScreen extends StatefulWidget {
-  final String whichCoupon;
-  RedemptionScreen(this.whichCoupon);
+  final String frontCoupon;
+  final String backgroundCoupon;
+  final Color colors;
+  RedemptionScreen(this.frontCoupon, this.backgroundCoupon, this.colors);
 
   @override
   _RedemptionScreenState createState() => _RedemptionScreenState();
@@ -40,8 +42,7 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
           width: double.infinity,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: NetworkImage(
-                      'https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80'),
+                  image: AssetImage(widget.backgroundCoupon),
                   fit: BoxFit.cover)),
           child: Column(
             children: [
@@ -70,7 +71,7 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                     //comment: this is coupon image
                     Padding(
                       padding: const EdgeInsets.only(top: 25),
-                      child: Image.asset('assets/coupons/1_front.PNG',
+                      child: Image.asset(widget.frontCoupon,
                           width: displayWidth(context) * 0.90),
                     ),
                     Padding(
@@ -134,7 +135,7 @@ class _RedemptionScreenState extends State<RedemptionScreen> {
                                   horizontal: 50, vertical: 12)),
                           elevation: MaterialStateProperty.all(10),
                           backgroundColor:
-                              MaterialStateProperty.all(HexColor('#32a852')),
+                              MaterialStateProperty.all(widget.colors),
                         ),
                       ),
                     )
