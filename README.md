@@ -1,5 +1,5 @@
 ![Header](https://raw.githubusercontent.com/rohitgupta2000/trashCashteam/main/assets/writing.png "Header")
-# TrashCash
+# Trash Cash
 
 Trash Cash is an app to create a sense of responsibility among the users about how we dispose our waste.The recent pandemic taught us that humans are the sole reason for the climate change as in the initial stage of lockdown we saw how the sky became clearer and how the water bodies flourished without human interference.
 
