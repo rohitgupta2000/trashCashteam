@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:line_awesome_icons/line_awesome_icons.dart';
 import 'package:trashcash_home/pages/ewaste.dart';
+import 'package:trashcash_home/pages/ewasteForm.dart';
 
 class Sell extends StatelessWidget {
   @override
@@ -75,43 +76,49 @@ class Sell extends StatelessWidget {
                 ),
               ),
               //comment: this is the newspaper
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: new Border.all(
-                        color: Colors.black,
-                        width: 1,
-                        style: BorderStyle.solid),
-                    borderRadius: new BorderRadius.all(new Radius.circular(40)),
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Colors.black,
-                        offset: new Offset(0, 0.1),
-                        blurRadius: 0.1,
-                      )
-                    ]),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 10, vertical: 8),
-                      child: Image.asset(
-                        'assets/002-newspaper.png',
-                        height: 70,
-                        width: 70,
+              GestureDetector(
+                 onTap: () {
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => EwasteForm()));
+                },
+                              child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: new Border.all(
+                          color: Colors.black,
+                          width: 1,
+                          style: BorderStyle.solid),
+                      borderRadius: new BorderRadius.all(new Radius.circular(40)),
+                      boxShadow: [
+                        new BoxShadow(
+                          color: Colors.black,
+                          offset: new Offset(0, 0.1),
+                          blurRadius: 0.1,
+                        )
+                      ]),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 8),
+                        child: Image.asset(
+                          'assets/002-newspaper.png',
+                          height: 70,
+                          width: 70,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 10),
-                      child: Text('Newspapers',
-                          style: TextStyle(
-                              fontSize: 24,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600)),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 10),
+                        child: Text('Newspapers',
+                            style: TextStyle(
+                                fontSize: 24,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600)),
+                      )
+                    ],
+                  ),
                 ),
               ),
               //comment: this is the plastic waste
