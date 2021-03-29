@@ -35,7 +35,6 @@ class _UserProfileState extends State<UserProfile> {
     return Column(
       children: [
          Container(
-           margin: EdgeInsets.only(top:0),
            decoration: BoxDecoration(color: Colors.white),
                 //height: 50,width: 100,
                 child: Image.asset("assets/trashcashlogo.png",height: 80,width: double.infinity,),
