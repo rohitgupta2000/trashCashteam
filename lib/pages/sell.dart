@@ -11,6 +11,7 @@ class Sell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: Container(),
           title: Text(
             'What are you offering?',
             style: TextStyle(fontSize: 23, color: Colors.white),

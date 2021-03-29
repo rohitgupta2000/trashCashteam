@@ -33,7 +33,7 @@ class _TrashCashHomeState extends State<TrashCashHome> {
     //   DatabaseMethods.saveImageUrl({"url":"trashcash2r"});
 
     return Scaffold(
-      // appBar: AppBar( 
+      // appBar: AppBar(
       //  // toolbarOpacity: 0,
       //   //  backgroundColor: Colors.transparent,
       //   //   elevation: 0,
@@ -45,11 +45,10 @@ class _TrashCashHomeState extends State<TrashCashHome> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-             
               Container(
                 //comment: image design and padding for the green container
                 margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-                padding: const EdgeInsets.only(bottom: 80, top: 50),
+                padding: const EdgeInsets.only(bottom: 80, top: 0),
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   borderRadius: BorderRadius.only(

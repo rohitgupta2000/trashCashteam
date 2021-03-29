@@ -18,15 +18,16 @@ class _CouponState extends State<Coupon> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: Container(),
           title: Container(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 8, 0, 5),
+                padding: const EdgeInsets.fromLTRB(0, 8, 0, 5),
                 child: Text(
                   'Coupons',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
                 ),
               ),
               Row(

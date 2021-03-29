@@ -9,8 +9,9 @@ class QuotationContainer extends StatelessWidget {
         children: [
           Container(
             //comment: this the quotation
-            margin: EdgeInsets.fromLTRB(17, 20, 5, 10),
-            child: Text('“The greatest threat to our planet is the   belief that someone else will save it.”',
+            margin: EdgeInsets.fromLTRB(35, 20, 5, 10),
+            child: Text(
+                '“The greatest threat to our planet is the   belief that someone else will save it.”',
                 style: GoogleFonts.aBeeZee(
                     fontSize: 18,
                     color: Colors.white,

@@ -1,9 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'home.dart';
-
-
-
 
 class ProfileScreen extends StatelessWidget {
   static String routeName = '/profile';
@@ -11,11 +7,13 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       // toolbarHeight: 50,
+        leading: Container(),
+        // toolbarHeight: 50,
         //backgroundColor: Colors.black,
-        title:  Text("Profile",),
-      
-      
+        title: Text(
+          "Profile",
+          style: TextStyle(fontSize: 25),
+        ),
       ),
       body: Home(),
     );
