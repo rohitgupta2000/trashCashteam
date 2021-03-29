@@ -61,10 +61,10 @@ class _UploadingImageToFirebaseStorageState
     FirebaseStorage storage = FirebaseStorage.instance;
 Reference ref = storage.ref().child( '$fileName');
 UploadTask uploadTask = ref.putFile(_imageFile);
-uploadTask.then((res) {
+await uploadTask.then((res) {
    res.ref.getDownloadURL();
 });
-DatabaseMethods.saveImageUrl({"url":'$fileName', "time": DateTime.now().microsecondsSinceEpoch});
+await DatabaseMethods.saveImageUrl({"url":'$fileName', "time": DateTime.now().microsecondsSinceEpoch});
 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyAdminHomePage(title: 'Admin Dashboard')));
   }
 

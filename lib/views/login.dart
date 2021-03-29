@@ -75,187 +75,189 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-      body: isLoading
-          ? Container(
-              child: Center(
-              child: CircularProgressIndicator(),
-            ))
-          : Container(
-              height: MediaQuery.of(context).size.height,
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Expanded(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          SizedBox(
-                            height: 0,
-                          ),
-                          Text(
-                            "Login",
-                            style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Login to your account",
-                            style:
-                                TextStyle(fontSize: 17.0, color: Colors.black),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 5),
-                        child: Image.asset(
-                          'assets/trashcashlogo.png',
-                          height: 180,
-                          width: 550,
-                        ),
-                      ),
-
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Form(
-                          key: formkey,
-                          child: Column(
-                            children: <Widget>[
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              TextFormField(
-                                controller: emailTextEditngController,
-                                validator: (val) {
-                                  return RegExp(
-                                              r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
-                                          .hasMatch(val)
-                                      ? null
-                                      : "invalid email";
-                                },
-                                decoration: InputDecoration(
-                                  hintText: 'Email',
-                                  suffixIcon: Icon(Icons.email),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              TextFormField(
-                                controller: passwordTextEditngController,
-                                obscureText: true, //to show stars
-                                validator: (val) {
-                                  return val.length > 6
-                                      ? null
-                                      : "provide 6+ character ";
-                                },
-
-                                decoration: InputDecoration(
-                                  hintText: 'Password',
-                                  suffixIcon: Icon(Icons.visibility_off),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 40),
-                        child: Container(
-                          //padding: EdgeInsets.only(top: 3, left: 3),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(40),
-                              border: Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                              )),
-                          child: MaterialButton(
-                            minWidth: double.infinity,
-                            height: 60,
-                            onPressed: () {
-                              signIn();
-                            },
-                            color: Colors.lightGreen[600],
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              side: BorderSide(color: Colors.black),
+      body: SingleChildScrollView(
+              child: isLoading
+            ? Container(
+                child: Center(
+                child: CircularProgressIndicator(),
+              ))
+            : Container(
+                height: MediaQuery.of(context).size.height,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Expanded(
+                        child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            SizedBox(
+                              height: 0,
                             ),
-                            child: Text(
+                            Text(
                               "Login",
                               style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 20,
-                                color: Colors.white,
+                                  fontSize: 30, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Login to your account",
+                              style:
+                                  TextStyle(fontSize: 17.0, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 5, vertical: 5),
+                          child: Image.asset(
+                            'assets/trashcashlogo.png',
+                            height: 180,
+                            width: 550,
+                          ),
+                        ),
+
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 40),
+                          child: Form(
+                            key: formkey,
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(
+                                  height: 10.0,
+                                ),
+                                TextFormField(
+                                  controller: emailTextEditngController,
+                                  validator: (val) {
+                                    return RegExp(
+                                                r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                                            .hasMatch(val)
+                                        ? null
+                                        : "invalid email";
+                                  },
+                                  decoration: InputDecoration(
+                                    hintText: 'Email',
+                                    suffixIcon: Icon(Icons.email),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10.0,
+                                ),
+                                TextFormField(
+                                  controller: passwordTextEditngController,
+                                  obscureText: true, //to show stars
+                                  validator: (val) {
+                                    return val.length > 6
+                                        ? null
+                                        : "provide 6+ character ";
+                                  },
+
+                                  decoration: InputDecoration(
+                                    hintText: 'Password',
+                                    suffixIcon: Icon(Icons.visibility_off),
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(20.0),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 40),
+                          child: Container(
+                            //padding: EdgeInsets.only(top: 3, left: 3),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(40),
+                                border: Border(
+                                  bottom: BorderSide(color: Colors.black),
+                                  top: BorderSide(color: Colors.black),
+                                  left: BorderSide(color: Colors.black),
+                                  right: BorderSide(color: Colors.black),
+                                )),
+                            child: MaterialButton(
+                              minWidth: double.infinity,
+                              height: 60,
+                              onPressed: () {
+                                signIn();
+                              },
+                              color: Colors.lightGreen[600],
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                side: BorderSide(color: Colors.black),
+                              ),
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                      ),
 
-                      SizedBox(height: 10.0),
-                      GestureDetector(
-                        onTap: () {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignupPage()));
-                        },
-                        child: Text.rich(
-                          TextSpan(text: 'Don\'t have an account  ', children: [
-                            TextSpan(
-                              text: 'Signup',
-                              style: TextStyle(color: Color(0xffEE7B23),fontSize: 18),
-                            ),
-                          ]),
+                        SizedBox(height: 10.0),
+                        GestureDetector(
+                          onTap: () {
+                            // Navigator.push(context, MaterialPageRoute(builder: (context)=>Second()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignupPage()));
+                          },
+                          child: Text.rich(
+                            TextSpan(text: 'Don\'t have an account  ', children: [
+                              TextSpan(
+                                text: 'Signup',
+                                style: TextStyle(color: Color(0xffEE7B23),fontSize: 18),
+                              ),
+                            ]),
+                          ),
                         ),
-                      ),
-                      // SizedBox(height:20.0),
+                        // SizedBox(height:20.0),
 
-                      // Center(
-                      //   child: Text(
-                      //     'OR'
-                      //     ' LOGIN WITH',
-                      //     style: TextStyle(color: Colors.black, fontSize: 20),
-                      //   ),
-                      // ),
-                      // SizedBox(
-                      //     // height:10,
-                      //     ),
-                      // Container(
-                      //   height: 60,
-                      //   child: Row(
-                      //     mainAxisAlignment: MainAxisAlignment.center,
-                      //     children: <Widget>[
-                      //       Image(
-                      //         image: AssetImage('assets/facebook.png'),
-                      //       ),
-                      //       SizedBox(
-                      //         width: 26,
-                      //       ),
-                      //       Image(image: AssetImage('assets/google2.png'))
-                      //     ],
-                      //   ),
-                      // ),
-                    ],
-                  ))
-                ],
+                        // Center(
+                        //   child: Text(
+                        //     'OR'
+                        //     ' LOGIN WITH',
+                        //     style: TextStyle(color: Colors.black, fontSize: 20),
+                        //   ),
+                        // ),
+                        // SizedBox(
+                        //     // height:10,
+                        //     ),
+                        // Container(
+                        //   height: 60,
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     children: <Widget>[
+                        //       Image(
+                        //         image: AssetImage('assets/facebook.png'),
+                        //       ),
+                        //       SizedBox(
+                        //         width: 26,
+                        //       ),
+                        //       Image(image: AssetImage('assets/google2.png'))
+                        //     ],
+                        //   ),
+                        // ),
+                      ],
+                    ))
+                  ],
+                ),
               ),
-            ),
+      ),
     );
   }
 }

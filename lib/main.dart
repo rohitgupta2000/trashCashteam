@@ -72,7 +72,7 @@ class _TrashCashState extends State<TrashCash> {
       theme: ThemeData(primarySwatch: Colors.green),
       home: isUserloggedIn != null
           ? isUserloggedIn
-              ? SplashScreen()
+              ? HomePage()
               : SplashScreen()
           : SplashScreen(),
       //HomePage(),

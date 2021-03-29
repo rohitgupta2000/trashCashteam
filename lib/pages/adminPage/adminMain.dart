@@ -1,5 +1,6 @@
 import 'package:trashcash_home/pages/homePage.dart';
 import 'package:trashcash_home/pages/orders.dart';
+import 'package:trashcash_home/views/mainpage.dart';
 
 import './uploadpost.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,9 @@ class MyAdminHomePage extends StatefulWidget {
 
 class _MyAdminHomePageState extends State<MyAdminHomePage> {
   int currentIndex;
+ static toMainPage(){
+
+  }
   final List<Widget> _children = [
   AdminPosts(),OrdersPage(),Container()
   ];
@@ -36,7 +40,7 @@ class _MyAdminHomePageState extends State<MyAdminHomePage> {
       // appBar: AppBar(
       //   title: Text(widget.title),
       // ),
-       floatingActionButton: FloatingActionButton.extended(
+     floatingActionButton: FloatingActionButton.extended(
   onPressed: () {
     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>  UploadingImageToFirebaseStorage()));
   },
@@ -114,9 +118,17 @@ class _MyAdminHomePageState extends State<MyAdminHomePage> {
     );
   }
 }
+
 Widget AdminPosts(){
   return Scaffold(
-    appBar: AppBar(title: Text("Admin DashBoard")),
+    appBar: AppBar(title: Row(
+      children: [
+        Text("Admin DashBoard"),
+        
+      ],
+    ),automaticallyImplyLeading: false,
+    
+    ),
     
     body: postsThatWeWantToShow(),
 

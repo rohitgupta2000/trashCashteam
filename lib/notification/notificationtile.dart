@@ -9,8 +9,7 @@ class NotificationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(
-        //   builder: (context)=> ConversationScreen(chatRoomId)));
+
       },
       child: Container(
         color: Colors.white,

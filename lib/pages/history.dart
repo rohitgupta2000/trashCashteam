@@ -99,7 +99,8 @@ class _HistoryState extends State<History> {
               ),
             ),
                           ),
-                              )
+                              ),
+                                SizedBox(height:8),
                             ],),
                           ),
                           SizedBox(height:40 ,
