@@ -18,7 +18,8 @@ class _CouponState extends State<Coupon> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Container(),
+         // leading: Container(),
+         automaticallyImplyLeading: false,
           title: Container(
               child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

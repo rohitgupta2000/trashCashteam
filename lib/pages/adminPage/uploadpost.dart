@@ -92,11 +92,11 @@ Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyAdmi
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
                     child: Text(
-                      "Uploading Image to Homepage",
+                      "Create a new post",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 28,
-                          fontStyle: FontStyle.italic),
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
                 ),

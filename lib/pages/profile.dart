@@ -6,6 +6,8 @@ class Profile extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Profile'),
+                   automaticallyImplyLeading: false,
+
         ),
         body: Container(decoration: BoxDecoration(color: Colors.purpleAccent)));
   }

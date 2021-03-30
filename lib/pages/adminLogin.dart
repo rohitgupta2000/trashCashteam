@@ -17,21 +17,14 @@ class AdminLogin extends StatelessWidget {
 
        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MyAdminHomePage()));
       
-    }
-
-
-    }
+    }  }
     
-    
-    
-   
-
     return Scaffold(
       body: SingleChildScrollView(
               child: SafeArea(
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height/1.1,
             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
             child: Column(
               // even space distribution
@@ -71,9 +64,10 @@ class AdminLogin extends StatelessWidget {
                     children: <Widget>[
                       TextFormField(
                          controller: adminidcontroller,
+                         obscureText: true,
                               validator: (val) {
                                 //the val is the value user input in the textfield
-                                return  val!="rohit"
+                                return  val!="adminrohit"
                                     ? "invalid Admin ID"
                                     : null;
                               },

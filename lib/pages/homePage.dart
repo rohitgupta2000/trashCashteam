@@ -98,7 +98,10 @@ Widget postsThatWeWantToShow() {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return Container(
-                            margin: EdgeInsets.symmetric(vertical: 40),
+                            decoration: BoxDecoration(
+                          
+                            ),
+                            margin: EdgeInsets.symmetric(vertical: 5),
 
                             //width: 100,height: 100,
 

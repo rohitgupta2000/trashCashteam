@@ -5,6 +5,7 @@ import 'package:trashcash_home/services/database.dart';
 
 class Address extends StatelessWidget {
 
+static final formKey = GlobalKey<FormState>();
   final String details;
   final String description;
   final String category;
@@ -13,7 +14,7 @@ class Address extends StatelessWidget {
     @override
   Widget build(BuildContext context) {
     DatabaseMethods databaseMethods = new DatabaseMethods();
-    final formKey = GlobalKey<FormState>();
+    
     TextEditingController emailcontroller = new TextEditingController();
     TextEditingController namecontroller = new TextEditingController();
     TextEditingController addresscontroller = new TextEditingController();
@@ -51,16 +52,17 @@ class Address extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(100, 5, 0, 5),
-                child: Text(
-                  "Enter Your Address",
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-              ),
+             Container(
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.all(15),
+                            margin: EdgeInsets.only(top:15),
+
+                              width: MediaQuery.of(context).size.width/2,
+                              decoration: BoxDecoration(color: Colors.green[200],
+                              borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text("Enter Address",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w700),),
+                            ),
               SizedBox(
                 height: 10,
               ),

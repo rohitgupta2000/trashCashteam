@@ -12,7 +12,8 @@ class Sell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: Container(),
+                  automaticallyImplyLeading: false,
+
           title: Text(
             'What are you offering?',
             style: TextStyle(fontSize: 23, color: Colors.white),
@@ -78,8 +79,8 @@ class Sell extends StatelessWidget {
               //comment: this is the newspaper
               GestureDetector(
                  onTap: () {
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => EwasteForm()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Newspapers")));
                 },
                               child: Container(
                   padding: const EdgeInsets.all(8),
@@ -122,6 +123,12 @@ class Sell extends StatelessWidget {
                 ),
               ),
               //comment: this is the plastic waste
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Plastics")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -160,8 +167,14 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
               //comment: this is the cardbaord
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Cardboards")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -200,8 +213,14 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
               //comment: this is the metal waste
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Metals")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -240,8 +259,14 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
               //comment: this the glassware
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Glasswares")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -280,8 +305,14 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
               //comment: this is the wires
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("Wires")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -320,8 +351,14 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
               //comment: this is the more
+               GestureDetector(
+                 onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => EwasteForm("More")));
+                },
+                              child:
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -360,7 +397,7 @@ class Sell extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
+              ),),
             ],
           ),
         ));

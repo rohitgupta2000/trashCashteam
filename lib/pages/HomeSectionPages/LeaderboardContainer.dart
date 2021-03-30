@@ -46,7 +46,7 @@ class LeaderBoardContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Tania Smith',
+                        'Kuhu Chawla    ',
                         style: GoogleFonts.lora(fontSize: 18),
                       ),
                       Text(
@@ -90,7 +90,7 @@ class LeaderBoardContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Evelin Jolie',
+                        'Vikash Hembram',
                         style: GoogleFonts.lora(fontSize: 18),
                       ),
                       Text(
@@ -134,7 +134,7 @@ class LeaderBoardContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Rohit Gupta',
+                        'Pratyush kumar  ',
                         style: GoogleFonts.lora(fontSize: 18),
                       ),
                       Text(

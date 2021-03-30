@@ -22,7 +22,9 @@ class _MyAppState extends State<help> {
 @override
 Widget build(BuildContext context) {
 	return MaterialApp(
+    debugShowCheckedModeBanner: false,
 	home: Scaffold(
+    
 		appBar: AppBar(
       centerTitle: true,
 		title: Text('Help and Support'),
@@ -47,7 +49,7 @@ Widget build(BuildContext context) {
 				height: 20.0,
 				),
 				Text(
-				'For any Quary',
+				'For any Query',
 				style: TextStyle(
 					fontSize: 20.0,
 					color: Colors.green,

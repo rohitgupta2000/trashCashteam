@@ -40,33 +40,34 @@ class EwasteForm extends StatelessWidget {
           key: formKey,
           child: Column(
             children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(165, 5, 0, 5),
-                child: Text(
-                  "Details",
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-              ),
+               Container(
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.all(15),
+                            margin: EdgeInsets.only(top:15),
+
+                              width: MediaQuery.of(context).size.width/2,
+                              decoration: BoxDecoration(color: Colors.green[200],
+                              borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text("Details",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.w700),),
+                            ),
               SizedBox(
                 height: 10,
               ),
-              TextFormField(
-                validator: (val) {
-                  if (val != "")
-                    return null;
-                  else
-                    return "Input is required";
-                },
-                textAlign: TextAlign.center,
-                maxLines: 2,
-             //   controller: brandController,
-                decoration: InputDecoration(
-                  hintText: "Brand*",
-                ),
-              ),
+            //   TextFormField(
+            //     validator: (val) {
+            //       if (val != "")
+            //         return null;
+            //       else
+            //         return "Input is required";
+            //     },
+            //     textAlign: TextAlign.center,
+            //     maxLines: 2,
+            //  //   controller: brandController,
+            //     decoration: InputDecoration(
+            //       hintText: "Brand*",
+            //     ),
+            //   ),
               SizedBox(height: 2),
               // Container(
               //   alignment: Alignment.topLeft,
@@ -74,9 +75,9 @@ class EwasteForm extends StatelessWidget {
               // ),
               SizedBox(height: 10),
               Container(
-                alignment: Alignment.topLeft,
-                margin: EdgeInsets.fromLTRB(153, 5, 0, 5),
-                child: Text("Enter the Details"),
+                alignment: Alignment.center,
+             //   margin: EdgeInsets.fromLTRB(153, 5, 0, 5),
+                child: Text("Enter the Details",style:TextStyle(fontSize: 18)),
               ),
               TextFormField(
                 validator: (val) {
@@ -95,7 +96,7 @@ class EwasteForm extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 margin: EdgeInsets.fromLTRB(55, 5, 0, 5),
                 child:
-                    Text("Include condition,features and reason for selling"),
+                    Text("Include condition,features and reason for selling",style:TextStyle(fontSize: 15)),
               ),
               TextFormField(
                 controller: descriptionController,

@@ -31,7 +31,7 @@ class _NotificationsState extends State<Notifications> {
                 itemBuilder: (context, index) {
                   return NotificationTile(
                       snapshot.data.docs[index].data()["email"].toString(),
-                      " is on TrashCash, ask them to donate some money");
+                      " has joined on Trash Cash");
 
                   //  snapshot.data.docs[index].data()["message"],snapshot.data.docs[index].data()["sendBy"]==Constants.myNAme);
                 },
