@@ -9,9 +9,10 @@ import 'package:trashcash_home/services/database.dart';
 class EwasteForm extends StatelessWidget {
   final String apptitle;
   EwasteForm(this.apptitle);
+   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
+   
 
   //  DatabaseMethods databaseMethods = new DatabaseMethods();
    // TextEditingController brandController = new TextEditingController();
