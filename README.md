@@ -22,6 +22,8 @@ The deteroiting climate conditions as well as the recent pandemic has inspired t
 
 - To get started in using Flutter visit <a href="https://flutter.dev/docs/get-started/install">HERE</a>.
 
+- For the admin panel the login id is adminrohit.
+
 ## How the App Works
 
 The user can choose any of their desired category from the '+' page and then will be prompted to provide more deatils regarding the product they want to sell. After filling out the deatils of the product additional details about their address will be asked. Then the user will click the confirm button and order will be placed.
