@@ -197,6 +197,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+<<<<<<< Updated upstream
   flip_card:
     dependency: "direct main"
     description:
@@ -204,11 +205,14 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.4"
+=======
+>>>>>>> Stashed changes
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< Updated upstream
   flutter_cupertino_settings:
     dependency: "direct main"
     description:
@@ -216,13 +220,19 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.0"
+=======
+>>>>>>> Stashed changes
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
       name: flutter_plugin_android_lifecycle
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< Updated upstream
     version: "2.0.0"
+=======
+    version: "2.0.2"
+>>>>>>> Stashed changes
   flutter_svg:
     dependency: "direct main"
     description:
@@ -281,7 +291,11 @@ packages:
       name: image_picker
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< Updated upstream
     version: "0.7.3"
+=======
+    version: "0.7.5+4"
+>>>>>>> Stashed changes
   image_picker_for_web:
     dependency: transitive
     description:
@@ -295,7 +309,11 @@ packages:
       name: image_picker_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
+<<<<<<< Updated upstream
     version: "2.0.1"
+=======
+    version: "2.1.0"
+>>>>>>> Stashed changes
   intl:
     dependency: transitive
     description:
